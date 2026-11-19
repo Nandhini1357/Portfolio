@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="esBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d1a" />
+      <stop offset="100%" stop-color="#111833" />
+    </linearGradient>
+    <linearGradient id="bluePurpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="esGlow">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#esBg)" />
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <path d="M0,75 H800 M0,150 H800 M0,225 H800 M0,300 H800 M0,375 H800" />
+    <path d="M100,0 V450 M200,0 V450 M300,0 V450 M400,0 V450 M500,0 V450 M600,0 V450 M700,0 V450" />
+  </g>
+
+  <!-- Ambient Glow -->
+  <circle cx="280" cy="220" r="140" fill="#3b82f6" opacity="0.16" filter="url(#esGlow)" />
+  <circle cx="580" cy="210" r="130" fill="#8b5cf6" opacity="0.18" filter="url(#esGlow)" />
+
+  <!-- Left: Event Ticket & QR Pass -->
+  <g transform="translate(140, 105)">
+    <rect width="240" height="215" rx="16" fill="rgba(20, 28, 52, 0.85)" stroke="rgba(59, 130, 246, 0.3)" stroke-width="1.5" />
+    <!-- Ticket notch effect -->
+    <path d="M 0,110 A 14,14 0 0,0 0,138 M 240,110 A 14,14 0 0,1 240,138" stroke="rgba(59,130,246,0.3)" fill="#090d1a" stroke-width="1.5" />
+    <line x1="20" y1="124" x2="220" y2="124" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="6 4" />
+    
+    <!-- Top ticket header -->
+    <rect x="20" y="22" width="40" height="40" rx="8" fill="url(#bluePurpleGrad)" />
+    <!-- Calendar icon inside -->
+    <path d="M 32,32 H 48 V 48 H 32 Z M 36,28 V 32 M 44,28 V 32" stroke="#ffffff" stroke-width="2" fill="none" />
+    <text x="72" y="38" font-family="'Segoe UI', Inter, sans-serif" font-size="13" font-weight="700" fill="#ffffff">TECH CONCLAVE</text>
+    <text x="72" y="54" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="500" fill="#93c5fd">Oct 24 • Hall B</text>
+
+    <!-- Bottom QR Code Mockup -->
+    <g transform="translate(25, 140)">
+      <rect width="55" height="55" rx="6" fill="#ffffff" />
+      <!-- QR Blocks -->
+      <rect x="6" y="6" width="16" height="16" fill="#0f172a" />
+      <rect x="33" y="6" width="16" height="16" fill="#0f172a" />
+      <rect x="6" y="33" width="16" height="16" fill="#0f172a" />
+      <rect x="10" y="10" width="8" height="8" fill="#ffffff" />
+      <rect x="37" y="10" width="8" height="8" fill="#ffffff" />
+      <rect x="10" y="37" width="8" height="8" fill="#ffffff" />
+      <rect x="25" y="25" width="6" height="6" fill="#0f172a" />
+      <rect x="33" y="33" width="7" height="7" fill="#3b82f6" />
+    </g>
+
+    <text x="95" y="162" font-family="'Segoe UI', Inter, sans-serif" font-size="12" font-weight="700" fill="#38bdf8">QR Attendance</text>
+    <text x="95" y="180" font-family="'Segoe UI', Inter, sans-serif" font-size="10" font-weight="500" fill="#94a3b8">Scan &amp; Live Verification</text>
+  </g>
+
+  <!-- Right: Attendance Analytics Panel -->
+  <g transform="translate(420, 95)">
+    <rect width="260" height="235" rx="16" fill="rgba(24, 32, 60, 0.85)" stroke="rgba(139, 92, 246, 0.25)" stroke-width="1.5" />
+    <rect width="260" height="34" rx="16" fill="rgba(30, 42, 75, 0.9)" />
+    <text x="130" y="22" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="700" fill="#c4b5fd" text-anchor="middle">LIVE ATTENDANCE SYNC</text>
+
+    <!-- Stat boxes -->
+    <g transform="translate(20, 50)">
+      <rect width="105" height="55" rx="8" fill="rgba(59,130,246,0.12)" stroke="rgba(59,130,246,0.2)" />
+      <text x="52" y="26" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#60a5fa" text-anchor="middle">450+</text>
+      <text x="52" y="44" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#94a3b8" text-anchor="middle">Registered</text>
+    </g>
+
+    <g transform="translate(135, 50)">
+      <rect width="105" height="55" rx="8" fill="rgba(16,185,129,0.12)" stroke="rgba(16,185,129,0.2)" />
+      <text x="52" y="26" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="800" fill="#34d399" text-anchor="middle">98.2%</text>
+      <text x="52" y="44" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#94a3b8" text-anchor="middle">Checked-In</text>
+    </g>
+
+    <!-- Real-time activity list -->
+    <g transform="translate(20, 125)">
+      <circle cx="8" cy="8" r="4" fill="#10b981" />
+      <text x="22" y="12" font-family="'Segoe UI', sans-serif" font-size="11" fill="#e2e8f0" font-weight="500">Nandhini S checked in (Hall B)</text>
+      
+      <circle cx="8" cy="36" r="4" fill="#3b82f6" />
+      <text x="22" y="40" font-family="'Segoe UI', sans-serif" font-size="11" fill="#e2e8f0" font-weight="500">Batch 2026 QR Badges Synced</text>
+
+      <circle cx="8" cy="64" r="4" fill="#8b5cf6" />
+      <text x="22" y="68" font-family="'Segoe UI', sans-serif" font-size="11" fill="#e2e8f0" font-weight="500">Digital Certificate Trigger Ready</text>
+    </g>
+  </g>
+
+  <!-- Top Category Tag -->
+  <g transform="translate(50, 45)">
+    <rect width="170" height="28" rx="8" fill="rgba(59,130,246,0.15)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+    <text x="85" y="18" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="700" fill="#93c5fd" text-anchor="middle">EVENT MANAGEMENT</text>
+  </g>
+
+  <!-- Bottom Details -->
+  <text x="50" y="390" font-family="'Segoe UI', Inter, sans-serif" font-size="24" font-weight="800" fill="#ffffff" letter-spacing="0.5">EventSync</text>
+  <text x="50" y="415" font-family="'Segoe UI', Inter, sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Event &amp; Attendance Management Platform • Project Preview Placeholder</text>
+</svg>

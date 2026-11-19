@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="achLpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040c1c" />
+      <stop offset="100%" stop-color="#0e2246" />
+    </linearGradient>
+    <linearGradient id="rocketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700" />
+      <stop offset="100%" stop-color="#ff7b00" />
+    </linearGradient>
+    <filter id="lpGlow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="380" rx="16" fill="url(#achLpBg)" stroke="rgba(255,215,0,0.3)" stroke-width="1.5" />
+  
+  <g opacity="0.1" stroke="#00c8ff" stroke-width="1">
+    <line x1="0" y1="95" x2="600" y2="95" />
+    <line x1="0" y1="190" x2="600" y2="190" />
+    <line x1="0" y1="285" x2="600" y2="285" />
+    <line x1="150" y1="0" x2="150" y2="380" />
+    <line x1="300" y1="0" x2="300" y2="380" />
+    <line x1="450" y1="0" x2="450" y2="380" />
+  </g>
+
+  <circle cx="300" cy="155" r="100" fill="#ff7b00" opacity="0.12" filter="url(#lpGlow)" />
+
+  <!-- Rocket / Launch Pad Icon -->
+  <g transform="translate(300, 150)">
+    <!-- Exhaust flame -->
+    <path d="M-10,40 Q0,75 10,40 Z" fill="#ff7b00" opacity="0.8" />
+    <path d="M-6,40 Q0,60 6,40 Z" fill="#ffd700" />
+    <!-- Rocket Body -->
+    <path d="M0,-60 C18,-35 20,15 20,40 L-20,40 C-20,15 -18,-35 0,-60 Z" fill="rgba(14,34,70,0.95)" stroke="url(#rocketGrad)" stroke-width="2.5" />
+    <!-- Window -->
+    <circle cx="0" cy="-10" r="10" fill="#00c8ff" />
+    <!-- Fins -->
+    <polygon points="-20,20 -38,45 -20,42" fill="url(#rocketGrad)" />
+    <polygon points="20,20 38,45 20,42" fill="url(#rocketGrad)" />
+  </g>
+
+  <!-- Event Title Badge -->
+  <g transform="translate(300, 260)">
+    <rect x="-130" y="0" width="260" height="36" rx="8" fill="rgba(10,20,40,0.85)" stroke="url(#rocketGrad)" stroke-width="1.2" />
+    <text x="0" y="24" font-family="'Segoe UI', Inter, sans-serif" font-size="13" font-weight="800" fill="#ffd700" text-anchor="middle" letter-spacing="1.5">AWS LAUNCHPAD 2026</text>
+  </g>
+
+  <!-- Year Tag -->
+  <g transform="translate(480, 25)">
+    <rect width="95" height="26" rx="13" fill="rgba(255,215,0,0.15)" stroke="rgba(255,215,0,0.4)" stroke-width="1" />
+    <text x="47" y="17" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="700" fill="#ffd700" text-anchor="middle">FEB 2026</text>
+  </g>
+
+  <text x="40" y="340" font-family="'Segoe UI', Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff">Flagship Student Summit</text>
+  <text x="40" y="360" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="500" fill="#94a3b8">Conference Logistics, Workshops &amp; Speaker Sessions</text>
+</svg>

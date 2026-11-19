@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="certBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0e1c" />
+      <stop offset="50%" stop-color="#11182f" />
+      <stop offset="100%" stop-color="#090d18" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="purpleBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="cCertGlow">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="560" rx="16" fill="url(#certBg)" stroke="rgba(245,158,11,0.3)" stroke-width="2" />
+
+  <!-- Double Border Frame -->
+  <rect x="25" y="25" width="750" height="510" rx="12" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+  <rect x="35" y="35" width="730" height="490" rx="10" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="8 6" opacity="0.6" />
+
+  <!-- Corner Flourishes -->
+  <g stroke="url(#goldGrad)" stroke-width="2" fill="none">
+    <path d="M45,70 L45,45 L70,45" />
+    <path d="M755,70 L755,45 L730,45" />
+    <path d="M45,490 L45,515 L70,515" />
+    <path d="M755,490 L755,515 L730,515" />
+  </g>
+
+  <!-- Top Seal / Badge -->
+  <g transform="translate(400, 100)">
+    <circle cx="0" cy="0" r="38" fill="#182240" stroke="url(#goldGrad)" stroke-width="2.5" filter="url(#cCertGlow)" />
+    <!-- Star icon -->
+    <polygon points="0,-18 5,-5 18,-5 8,4 12,17 0,9 -12,17 -8,4 -18,-5 -5,-5" fill="url(#goldGrad)" />
+    <text x="0" y="28" font-family="'Segoe UI', Inter, sans-serif" font-size="8" font-weight="800" fill="#fde68a" letter-spacing="1">VERIFIED</text>
+  </g>
+
+  <!-- Certificate Heading -->
+  <text x="400" y="180" font-family="'Segoe UI', Inter, sans-serif" font-size="14" font-weight="700" fill="#a78bfa" text-anchor="middle" letter-spacing="3">CERTIFICATE OF RECOGNITION / COMPLETION</text>
+  <text x="400" y="215" font-family="'Georgia', serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Cloud &amp; AWS Learning Track</text>
+  <text x="400" y="245" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle">PROUDLY PRESENTED TO</text>
+  
+  <text x="400" y="290" font-family="'Segoe UI', Inter, sans-serif" font-size="30" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="1">NANDHINI S</text>
+  <line x1="250" y1="305" x2="550" y2="305" stroke="url(#goldGrad)" stroke-width="1.5" />
+
+  <!-- Description / Placeholder Note -->
+  <text x="400" y="340" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="500" fill="#cbd5e1" text-anchor="middle">In recognition of active participation in Cloud Architecture and AWS Builder Initiatives.</text>
+  
+  <!-- Clear Placeholder Notice -->
+  <g transform="translate(200, 375)">
+    <rect width="400" height="38" rx="8" fill="rgba(245, 158, 11, 0.12)" stroke="rgba(245, 158, 11, 0.3)" />
+    <text x="200" y="24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#fde68a" text-anchor="middle">[ CERTIFICATE PLACEHOLDER - ATTACH YOUR VERIFIED PDF/LINK ]</text>
+  </g>
+
+  <!-- Signatures / Footer -->
+  <g transform="translate(140, 470)">
+    <line x1="0" y1="0" x2="160" y2="0" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <text x="80" y="20" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">Issuing Authority Placeholder</text>
+    <text x="80" y="34" font-family="'Segoe UI', sans-serif" font-size="9" fill="#64748b" text-anchor="middle">AWS Community / SKCT</text>
+  </g>
+
+  <g transform="translate(500, 470)">
+    <line x1="0" y1="0" x2="160" y2="0" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <text x="80" y="20" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">Credential ID: AWS-SBG-XXXX</text>
+    <text x="80" y="34" font-family="'Segoe UI', sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Date: Configurable Placeholder</text>
+  </g>
+</svg>

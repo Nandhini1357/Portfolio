@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="certFsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080d1a" />
+      <stop offset="50%" stop-color="#0f172e" />
+      <stop offset="100%" stop-color="#070a14" />
+    </linearGradient>
+    <linearGradient id="blueCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <filter id="cFsGlow">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="560" rx="16" fill="url(#certFsBg)" stroke="rgba(56,189,248,0.3)" stroke-width="2" />
+
+  <rect x="25" y="25" width="750" height="510" rx="12" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+  <rect x="35" y="35" width="730" height="490" rx="10" fill="none" stroke="url(#blueCyanGrad)" stroke-width="1" stroke-dasharray="8 6" opacity="0.6" />
+
+  <g stroke="url(#blueCyanGrad)" stroke-width="2" fill="none">
+    <path d="M45,70 L45,45 L70,45" />
+    <path d="M755,70 L755,45 L730,45" />
+    <path d="M45,490 L45,515 L70,515" />
+    <path d="M755,490 L755,515 L730,515" />
+  </g>
+
+  <g transform="translate(400, 100)">
+    <circle cx="0" cy="0" r="38" fill="#141f3d" stroke="url(#blueCyanGrad)" stroke-width="2.5" filter="url(#cFsGlow)" />
+    <path d="M-14,-10 L0,5 L14,-10 M-14,0 L0,15 L14,0" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+    <text x="0" y="28" font-family="'Segoe UI', Inter, sans-serif" font-size="8" font-weight="800" fill="#bae6fd" letter-spacing="1">DEV CERT</text>
+  </g>
+
+  <text x="400" y="180" font-family="'Segoe UI', Inter, sans-serif" font-size="14" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="3">CERTIFICATE OF TRAINING &amp; COMPETENCY</text>
+  <text x="400" y="215" font-family="'Georgia', serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Full Stack Java &amp; Spring Boot</text>
+  <text x="400" y="245" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle">AWARDED TO</text>
+  
+  <text x="400" y="290" font-family="'Segoe UI', Inter, sans-serif" font-size="30" font-weight="800" fill="#f8fafc" text-anchor="middle" letter-spacing="1">NANDHINI S</text>
+  <line x1="250" y1="305" x2="550" y2="305" stroke="url(#blueCyanGrad)" stroke-width="1.5" />
+
+  <text x="400" y="340" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="500" fill="#cbd5e1" text-anchor="middle">For demonstrating proficiency in modern web architecture, Spring Boot microservices, and database design.</text>
+  
+  <g transform="translate(190, 375)">
+    <rect width="420" height="38" rx="8" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.3)" />
+    <text x="210" y="24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#bae6fd" text-anchor="middle">[ CERTIFICATE PLACEHOLDER - ATTACH YOUR VERIFIED PDF/LINK ]</text>
+  </g>
+
+  <g transform="translate(140, 470)">
+    <line x1="0" y1="0" x2="160" y2="0" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <text x="80" y="20" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">Training Platform Placeholder</text>
+    <text x="80" y="34" font-family="'Segoe UI', sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Course Completion Credential</text>
+  </g>
+
+  <g transform="translate(500, 470)">
+    <line x1="0" y1="0" x2="160" y2="0" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" />
+    <text x="80" y="20" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600" fill="#94a3b8" text-anchor="middle">Credential ID: FS-DEV-XXXX</text>
+    <text x="80" y="34" font-family="'Segoe UI', sans-serif" font-size="9" fill="#64748b" text-anchor="middle">Date: Configurable Placeholder</text>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="galDemoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090f1e" />
+      <stop offset="100%" stop-color="#121b38" />
+    </linearGradient>
+    <linearGradient id="demoAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <filter id="demoGlow">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#galDemoBg)" />
+  
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <path d="M0,100 H800 M0,200 H800 M0,300 H800 M0,400 H800" />
+    <path d="M100,0 V500 M200,0 V500 M300,0 V500 M400,0 V500 M500,0 V500 M600,0 V500 M700,0 V500" />
+  </g>
+
+  <circle cx="380" cy="220" r="150" fill="#38bdf8" opacity="0.14" filter="url(#demoGlow)" />
+  <circle cx="550" cy="180" r="120" fill="#818cf8" opacity="0.14" filter="url(#demoGlow)" />
+
+  <!-- Showcase Display & Laptop Mockup -->
+  <g transform="translate(180, 85)">
+    <!-- Screen frame -->
+    <rect width="440" height="250" rx="14" fill="rgba(15, 23, 42, 0.9)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5" />
+    <rect width="440" height="30" rx="14" fill="rgba(30, 41, 69, 0.9)" />
+    <text x="220" y="20" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="700" fill="#bae6fd" text-anchor="middle">LIVE PROJECT DEMONSTRATION &amp; JURY PITCH</text>
+
+    <!-- UI Mockup inside screen -->
+    <g transform="translate(25, 50)">
+      <!-- Left cards -->
+      <rect width="180" height="80" rx="10" fill="rgba(56,189,248,0.12)" stroke="rgba(56,189,248,0.25)" />
+      <text x="15" y="25" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#38bdf8">SmartBlood DSS Engine</text>
+      <text x="15" y="45" font-family="'Segoe UI', sans-serif" font-size="10" fill="#94a3b8">Prediction: 99.4% Accuracy</text>
+      <text x="15" y="65" font-family="'Segoe UI', sans-serif" font-size="10" fill="#34d399">Status: Live Connected</text>
+
+      <!-- Right card -->
+      <rect x="195" y="0" width="195" height="80" rx="10" fill="rgba(129,140,248,0.12)" stroke="rgba(129,140,248,0.25)" />
+      <text x="210" y="25" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#a5b4fc">EventSync QR Check-in</text>
+      <text x="210" y="45" font-family="'Segoe UI', sans-serif" font-size="10" fill="#94a3b8">Instant Multi-User Sync</text>
+      <text x="210" y="65" font-family="'Segoe UI', sans-serif" font-size="10" fill="#38bdf8">REST APIs responding &lt; 40ms</text>
+
+      <!-- Bottom chart -->
+      <g transform="translate(0, 95)">
+        <rect width="390" height="75" rx="10" fill="rgba(24, 32, 56, 0.7)" stroke="rgba(255,255,255,0.08)" />
+        <path d="M 20,50 Q 80,10 140,35 T 260,20 T 370,10" fill="none" stroke="url(#demoAccent)" stroke-width="2.5" />
+        <circle cx="140" cy="35" r="4" fill="#38bdf8" />
+        <circle cx="260" cy="20" r="4" fill="#818cf8" />
+        <circle cx="370" cy="10" r="4" fill="#34d399" />
+        <text x="20" y="20" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" fill="#94a3b8">Real-time Performance &amp; Evaluation Metrics</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Tag & Description -->
+  <g transform="translate(40, 40)">
+    <rect width="190" height="28" rx="8" fill="rgba(56,189,248,0.18)" stroke="rgba(56,189,248,0.4)" stroke-width="1" />
+    <text x="95" y="18" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="700" fill="#bae6fd" text-anchor="middle">PROJECT DEMONSTRATION</text>
+  </g>
+
+  <g transform="translate(40, 430)">
+    <text x="0" y="20" font-family="'Segoe UI', Inter, sans-serif" font-size="20" font-weight="800" fill="#ffffff">Project Demonstration &amp; Technical Expo</text>
+    <text x="0" y="42" font-family="'Segoe UI', Inter, sans-serif" font-size="12" font-weight="500" fill="#94a3b8">Showcase of software solutions to mentors and industry experts • Replace in assets/images/gallery-project-demo.jpg</text>
+  </g>
+</svg>

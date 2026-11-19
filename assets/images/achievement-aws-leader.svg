@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="achAwsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040b18" />
+      <stop offset="100%" stop-color="#0c1d38" />
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c8ff" />
+      <stop offset="100%" stop-color="#73d8ff" />
+    </linearGradient>
+    <filter id="achGlow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="380" rx="16" fill="url(#achAwsBg)" stroke="rgba(255,215,0,0.3)" stroke-width="1.5" />
+  
+  <!-- Subtle dark blue grid -->
+  <g opacity="0.1" stroke="#00c8ff" stroke-width="1">
+    <line x1="0" y1="95" x2="600" y2="95" />
+    <line x1="0" y1="190" x2="600" y2="190" />
+    <line x1="0" y1="285" x2="600" y2="285" />
+    <line x1="150" y1="0" x2="150" y2="380" />
+    <line x1="300" y1="0" x2="300" y2="380" />
+    <line x1="450" y1="0" x2="450" y2="380" />
+  </g>
+
+  <!-- Glowing core -->
+  <circle cx="300" cy="160" r="110" fill="#ffd700" opacity="0.1" filter="url(#achGlow)" />
+  <circle cx="300" cy="160" r="70" fill="#00c8ff" opacity="0.08" filter="url(#achGlow)" />
+
+  <!-- Shield & Trophy Emblems -->
+  <g transform="translate(300, 150)">
+    <polygon points="0,-65 52,-35 52,30 0,65 -52,30 -52,-35" fill="rgba(12,29,56,0.9)" stroke="url(#goldAccent)" stroke-width="2.5" />
+    <!-- Star trophy -->
+    <path d="M-18,-15 H18 L24,0 L0,30 L-24,0 Z" fill="url(#goldAccent)" />
+    <circle cx="0" cy="-28" r="9" fill="#00c8ff" />
+  </g>
+
+  <!-- AWS Badge -->
+  <g transform="translate(300, 260)">
+    <rect x="-140" y="0" width="280" height="36" rx="8" fill="rgba(10,20,40,0.85)" stroke="url(#goldAccent)" stroke-width="1.2" />
+    <text x="0" y="24" font-family="'Segoe UI', Inter, sans-serif" font-size="13" font-weight="800" fill="#ffd700" text-anchor="middle" letter-spacing="1.5">AWS STUDENT BUILDER GROUP</text>
+  </g>
+
+  <!-- Year Tag -->
+  <g transform="translate(480, 25)">
+    <rect width="95" height="26" rx="13" fill="rgba(255,215,0,0.15)" stroke="rgba(255,215,0,0.4)" stroke-width="1" />
+    <text x="47" y="17" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="700" fill="#ffd700" text-anchor="middle">2025 – 2026</text>
+  </g>
+
+  <!-- Bottom Label -->
+  <text x="40" y="340" font-family="'Segoe UI', Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff">SKCT Campus Leadership</text>
+  <text x="40" y="360" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="500" fill="#94a3b8">Cloud Community Building &amp; Peer Mentorship</text>
+</svg>

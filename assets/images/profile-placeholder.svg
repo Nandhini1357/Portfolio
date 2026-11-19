@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d18" />
+      <stop offset="50%" stop-color="#12182c" />
+      <stop offset="100%" stop-color="#080b14" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="50%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="500" rx="40" fill="url(#bgGrad)" />
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="50" y1="0" x2="50" y2="500" />
+    <line x1="150" y1="0" x2="150" y2="500" />
+    <line x1="250" y1="0" x2="250" y2="500" />
+    <line x1="350" y1="0" x2="350" y2="500" />
+    <line x1="450" y1="0" x2="450" y2="500" />
+    <line x1="0" y1="50" x2="500" y2="500" />
+    <line x1="0" y1="150" x2="500" y2="150" />
+    <line x1="0" y1="250" x2="500" y2="250" />
+    <line x1="0" y1="350" x2="500" y2="350" />
+    <line x1="0" y1="450" x2="500" y2="450" />
+  </g>
+
+  <!-- Ambient Glow Circles -->
+  <circle cx="250" cy="220" r="140" fill="#8b5cf6" opacity="0.18" filter="url(#glow)" />
+  <circle cx="210" cy="180" r="90" fill="#3b82f6" opacity="0.22" filter="url(#glow)" />
+  <circle cx="290" cy="260" r="80" fill="#06b6d4" opacity="0.15" filter="url(#glow)" />
+
+  <!-- Outer Glowing Tech Ring -->
+  <circle cx="250" cy="220" r="145" fill="none" stroke="url(#accentGrad)" stroke-width="3" stroke-dasharray="14 8" opacity="0.75" />
+  <circle cx="250" cy="220" r="132" fill="#0f1628" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" />
+
+  <!-- Abstract Silhouette Avatar -->
+  <g fill="none" stroke="url(#accentGrad)" stroke-linecap="round">
+    <!-- Head -->
+    <ellipse cx="250" cy="175" rx="42" ry="48" fill="#182138" stroke="url(#cyanGrad)" stroke-width="2.5" />
+    <!-- Hair line / modern cut accent -->
+    <path d="M 215 170 Q 250 135 285 170" stroke="url(#accentGrad)" stroke-width="3" fill="none" />
+    <!-- Shoulders / Torso -->
+    <path d="M 180 295 C 180 235, 215 230, 250 230 C 285 230, 320 235, 320 295" fill="#182138" stroke="url(#cyanGrad)" stroke-width="2.5" />
+  </g>
+
+  <!-- Monogram Initials Badge -->
+  <circle cx="250" cy="220" r="28" fill="#090d16" stroke="url(#accentGrad)" stroke-width="2" />
+  <text x="250" y="226" font-family="'Segoe UI', Inter, sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="2">NS</text>
+
+  <!-- Online / Active Badge -->
+  <g transform="translate(330, 140)">
+    <circle cx="0" cy="0" r="14" fill="#0d1424" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+    <circle cx="0" cy="0" r="7" fill="#10b981" />
+    <circle cx="0" cy="0" r="11" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.6">
+      <animate attributeName="r" values="7;14;7" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Floating Tech Node Pills -->
+  <g transform="translate(85, 90)">
+    <rect width="110" height="32" rx="16" fill="rgba(20,28,48,0.85)" stroke="rgba(139,92,246,0.3)" stroke-width="1" />
+    <circle cx="16" cy="16" r="4" fill="#8b5cf6" />
+    <text x="60" y="20" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="600" fill="#c4b5fd" text-anchor="middle">AWS Leader</text>
+  </g>
+
+  <g transform="translate(315, 320)">
+    <rect width="115" height="32" rx="16" fill="rgba(20,28,48,0.85)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+    <circle cx="16" cy="16" r="4" fill="#3b82f6" />
+    <text x="63" y="20" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="600" fill="#93c5fd" text-anchor="middle">SKCT • IT 3rd Yr</text>
+  </g>
+
+  <!-- Bottom Banner Information -->
+  <g transform="translate(50, 400)">
+    <rect width="400" height="65" rx="16" fill="rgba(15,22,39,0.92)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+    <text x="200" y="27" font-family="'Segoe UI', Inter, sans-serif" font-size="14" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="1.5">NANDHINI S</text>
+    <text x="200" y="47" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="500" fill="#94a3b8" text-anchor="middle">Profile Photo Placeholder • Replace in assets/images/</text>
+  </g>
+</svg>

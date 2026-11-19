@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="achTeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040d1e" />
+      <stop offset="100%" stop-color="#0e2348" />
+    </linearGradient>
+    <linearGradient id="codeGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <filter id="teGlow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="380" rx="16" fill="url(#achTeBg)" stroke="rgba(255,215,0,0.3)" stroke-width="1.5" />
+  
+  <g opacity="0.1" stroke="#00c8ff" stroke-width="1">
+    <line x1="0" y1="95" x2="600" y2="95" />
+    <line x1="0" y1="190" x2="600" y2="190" />
+    <line x1="0" y1="285" x2="600" y2="285" />
+    <line x1="150" y1="0" x2="150" y2="380" />
+    <line x1="300" y1="0" x2="300" y2="380" />
+    <line x1="450" y1="0" x2="450" y2="380" />
+  </g>
+
+  <circle cx="300" cy="155" r="100" fill="#ffd700" opacity="0.1" filter="url(#teGlow)" />
+
+  <!-- Code / Event Nodes Icon -->
+  <g transform="translate(300, 150)">
+    <rect x="-65" y="-50" width="130" height="100" rx="12" fill="rgba(14,35,72,0.95)" stroke="url(#codeGold)" stroke-width="2.5" />
+    <!-- Code brackets -->
+    <path d="M-30,-12 L-44,0 L-30,12" stroke="#ffd700" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M30,-12 L44,0 L30,12" stroke="#ffd700" stroke-width="3" stroke-linecap="round" fill="none" />
+    <line x1="-8" y1="18" x2="8" y2="-18" stroke="#00c8ff" stroke-width="3" stroke-linecap="round" />
+  </g>
+
+  <!-- Title Badge -->
+  <g transform="translate(300, 260)">
+    <rect x="-140" y="0" width="280" height="36" rx="8" fill="rgba(10,20,40,0.85)" stroke="url(#codeGold)" stroke-width="1.2" />
+    <text x="0" y="24" font-family="'Segoe UI', Inter, sans-serif" font-size="13" font-weight="800" fill="#ffd700" text-anchor="middle" letter-spacing="1.5">TECHNICAL EVENT COORDINATION</text>
+  </g>
+
+  <!-- Year Tag -->
+  <g transform="translate(480, 25)">
+    <rect width="95" height="26" rx="13" fill="rgba(255,215,0,0.15)" stroke="rgba(255,215,0,0.4)" stroke-width="1" />
+    <text x="47" y="17" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="700" fill="#ffd700" text-anchor="middle">2024 – 2026</text>
+  </g>
+
+  <text x="40" y="340" font-family="'Segoe UI', Inter, sans-serif" font-size="18" font-weight="800" fill="#ffffff">Department of IT, SKCT</text>
+  <text x="40" y="360" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="500" fill="#94a3b8">Symposiums, Coding Contests &amp; Hackathon Management</text>
+</svg>

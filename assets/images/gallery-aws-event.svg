@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="galAwsBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1022" />
+      <stop offset="100%" stop-color="#182245" />
+    </linearGradient>
+    <linearGradient id="awsOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff9900" />
+      <stop offset="100%" stop-color="#ff6600" />
+    </linearGradient>
+    <linearGradient id="cloudPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="galGlow">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#galAwsBg)" />
+  
+  <!-- Subtle Grid -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <path d="M0,100 H800 M0,200 H800 M0,300 H800 M0,400 H800" />
+    <path d="M100,0 V500 M200,0 V500 M300,0 V500 M400,0 V500 M500,0 V500 M600,0 V500 M700,0 V500" />
+  </g>
+
+  <!-- Glowing Cloud & Stage Lighting -->
+  <circle cx="400" cy="220" r="160" fill="#ff9900" opacity="0.12" filter="url(#galGlow)" />
+  <circle cx="250" cy="180" r="130" fill="#8b5cf6" opacity="0.15" filter="url(#galGlow)" />
+  <circle cx="550" cy="240" r="130" fill="#3b82f6" opacity="0.15" filter="url(#galGlow)" />
+
+  <!-- Stage Backdrop Panel -->
+  <rect x="150" y="80" width="500" height="270" rx="20" fill="rgba(20, 28, 55, 0.85)" stroke="rgba(255,153,0,0.3)" stroke-width="1.5" />
+
+  <!-- AWS Cloud Logo / Architecture representation -->
+  <g transform="translate(400, 170)">
+    <!-- Cloud base -->
+    <path d="M-60,30 C-85,30 -100,10 -100,-15 C-100,-40 -80,-55 -55,-55 C-50,-85 -20,-105 15,-105 C50,-105 80,-80 85,-50 C105,-45 120,-25 120,0 C120,25 100,45 75,45 Z" fill="rgba(255, 153, 0, 0.12)" stroke="url(#awsOrange)" stroke-width="2.5" />
+    <!-- Smile arrow accent -->
+    <path d="M-40,10 Q10,40 60,10" fill="none" stroke="#ff9900" stroke-width="3.5" stroke-linecap="round" />
+    <polygon points="62,6 64,15 52,14" fill="#ff9900" />
+    <!-- AWS Text -->
+    <text x="10" y="-15" font-family="'Segoe UI', Inter, sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle">AWS</text>
+  </g>
+
+  <!-- Event Banner Text on Stage -->
+  <g transform="translate(400, 285)">
+    <rect x="-170" y="0" width="340" height="42" rx="10" fill="rgba(10, 15, 30, 0.9)" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+    <text x="0" y="26" font-family="'Segoe UI', Inter, sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">AWS LAUNCHPAD 2026</text>
+  </g>
+
+  <!-- Audience Silhouette -->
+  <g fill="rgba(12, 16, 32, 0.95)" stroke="rgba(255,255,255,0.08)" stroke-width="1">
+    <ellipse cx="200" cy="400" rx="40" ry="40" />
+    <ellipse cx="320" cy="390" rx="42" ry="42" />
+    <ellipse cx="440" cy="385" rx="45" ry="45" />
+    <ellipse cx="560" cy="395" rx="42" ry="42" />
+    <ellipse cx="670" cy="405" rx="40" ry="40" />
+  </g>
+
+  <!-- Category & Placeholder Tag -->
+  <g transform="translate(40, 40)">
+    <rect width="130" height="28" rx="8" fill="rgba(255,153,0,0.18)" stroke="rgba(255,153,0,0.4)" stroke-width="1" />
+    <text x="65" y="18" font-family="'Segoe UI', Inter, sans-serif" font-size="11" font-weight="700" fill="#fed7aa" text-anchor="middle">AWS EVENT</text>
+  </g>
+
+  <g transform="translate(40, 430)">
+    <text x="0" y="20" font-family="'Segoe UI', Inter, sans-serif" font-size="20" font-weight="800" fill="#ffffff">AWS Student Builder Group &amp; LaunchPad 2026</text>
+    <text x="0" y="42" font-family="'Segoe UI', Inter, sans-serif" font-size="12" font-weight="500" fill="#94a3b8">Kickstart Your Cloud Journey • SKCT (21 August 2026)</text>
+  </g>
+</svg>
