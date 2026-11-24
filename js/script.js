@@ -814,6 +814,14 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreText: 'MERN Stack • 2026',
         isElite: true,
         src: 'assets/images/symposium-cert-varnam-mern-stack.jpg'
+      },
+      {
+        tag: 'ISRO • BHARATIYA ANTARIKSH HACKATHON 2026',
+        title: 'Bharatiya Antariksh Hackathon',
+        desc: 'Certificate of Participation proudly presented to Nandhini S in recognition of participation and successful idea submission in the Bharatiya Antariksh Hackathon 2026, presented by the Indian Space Research Organisation (ISRO) and powered by Hack2skill (Certificate ID: 2026H2S06BAH-P12887).',
+        scoreText: 'ISRO Verified • 2026',
+        isElite: true,
+        src: 'assets/images/cert-isro-bharatiya-antariksh-hackathon.jpg'
       }
     ];
 
