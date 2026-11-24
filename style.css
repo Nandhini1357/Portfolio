@@ -1282,7 +1282,7 @@ button {
   line-height: 1.5;
 }
 
-/* --- 9. Skills Section (EXPERTISE CONTROL CENTER) --- */
+/* --- 9. Skills Section (Single Unified Grid) --- */
 .skills-section {
   position: relative;
   background-image:
@@ -1291,177 +1291,10 @@ button {
   background-size: 32px 32px;
 }
 
-/* Header Row: Title & Search Pill */
-.expertise-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 24px;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.expertise-title-block {
-  display: flex;
-  flex-direction: column;
-}
-
-.expertise-heading {
-  font-size: clamp(1.9rem, 3.2vw, 2.5rem);
-  font-weight: 800;
-  color: var(--text-white);
-  letter-spacing: -0.5px;
-  line-height: 1.15;
-  margin-bottom: 6px;
-}
-
-.expertise-subheading {
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: var(--cyan);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.expertise-header-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.expertise-search-pill {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(8, 12, 18, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-full);
-  padding: 8px 18px;
-  width: 270px;
-  transition: all var(--transition-fast);
-}
-
-.expertise-search-pill:focus-within {
-  border-color: rgba(0, 200, 255, 0.5);
-  box-shadow: 0 0 16px rgba(0, 200, 255, 0.18);
-}
-
-.expertise-search-icon {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.expertise-search-input {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--text-white);
-  font-size: 0.85rem;
-  width: 100%;
-  font-family: inherit;
-}
-
-.expertise-search-input::placeholder {
-  color: var(--text-muted);
-}
-
-.expertise-status-node {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 200, 255, 0.35);
-  background: rgba(0, 200, 255, 0.04);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.expertise-pulse-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 10px var(--cyan), 0 0 20px var(--cyan);
-  animation: pulseNodeGlow 2.2s infinite ease-in-out;
-}
-
-@keyframes pulseNodeGlow {
-
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    box-shadow: 0 0 8px #00C8FF, 0 0 16px #00C8FF;
-  }
-
-  50% {
-    transform: scale(1.25);
-    opacity: 0.7;
-    box-shadow: 0 0 14px #00C8FF, 0 0 26px #00C8FF;
-  }
-}
-
-/* Two-Column Control Center Layout */
-.control-center-layout {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 24px;
-  align-items: flex-start;
-}
-
-/* Left Sidebar */
-.control-center-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-.skill-category-btn {
-  display: block;
-  width: 100%;
-  padding: 12px 18px;
-  border-radius: 12px;
-  background: rgba(8, 12, 18, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: #8da2b6;
-  font-size: 0.9rem;
-  font-weight: 500;
-  font-family: inherit;
-  text-align: left;
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.skill-category-btn:hover {
-  border-color: rgba(0, 200, 255, 0.35);
-  color: var(--text-white);
-  background: rgba(0, 200, 255, 0.04);
-  transform: translateX(3px);
-}
-
-.skill-category-btn.active {
-  border-color: var(--cyan);
-  color: var(--cyan);
-  background: rgba(0, 200, 255, 0.06);
-  box-shadow: 0 0 16px rgba(0, 200, 255, 0.16);
-  font-weight: 600;
-  transform: none;
-}
-
-/* Right Main Area */
-.control-center-main {
-  width: 100%;
-}
-
 .skills-cards-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 16px;
   width: 100%;
 }
 
@@ -2933,37 +2766,9 @@ button {
     align-items: center;
   }
 
-  .control-center-layout {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .control-center-sidebar {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 8px;
-    width: 100%;
-  }
-
-  .expertise-header-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .expertise-header-right {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .expertise-search-pill {
-    width: 100%;
-    max-width: 320px;
-  }
-
   .skills-cards-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 14px;
   }
 
   .resume-layout {
@@ -3161,15 +2966,6 @@ button {
   .skills-cards-grid {
     grid-template-columns: 1fr;
     gap: 12px;
-  }
-
-  .control-center-sidebar {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .expertise-search-pill {
-    max-width: none;
-    flex: 1;
   }
 
   .nptel-certifications-block {

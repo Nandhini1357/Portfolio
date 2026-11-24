@@ -130,43 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealItems.forEach((item) => item.classList.add('revealed'));
   }
 
-  /* --- 5. Skill Search & Category Filtering --- */
-  const skillSearchInput = document.getElementById('skill-search-input');
-  const categoryBtns = document.querySelectorAll('.skill-category-btn');
-  const skillCards = document.querySelectorAll('.skill-card');
-  let currentCategory = 'all';
 
-  const filterSkills = () => {
-    const query = skillSearchInput ? skillSearchInput.value.trim().toLowerCase() : '';
-
-    skillCards.forEach((card) => {
-      const cardCategory = card.getAttribute('data-category');
-      const cardTitle = (card.getAttribute('data-skill') || '').toLowerCase();
-      const cardDesc = card.textContent.toLowerCase();
-
-      const matchesCategory = currentCategory === 'all' || cardCategory === currentCategory;
-      const matchesSearch = !query || cardTitle.includes(query) || cardDesc.includes(query);
-
-      if (matchesCategory && matchesSearch) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  };
-
-  categoryBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      categoryBtns.forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentCategory = btn.getAttribute('data-category');
-      filterSkills();
-    });
-  });
-
-  if (skillSearchInput) {
-    skillSearchInput.addEventListener('input', filterSkills);
-  }
 
   /* --- 6. Gallery & Certificate Lightbox Modal --- */
   const lightboxModal = document.getElementById('lightbox-modal');
@@ -968,6 +932,14 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreText: 'Cisco Verified • 2026',
         isElite: true,
         src: 'assets/images/cert-cisco-networking-basics.jpg'
+      },
+      {
+        tag: 'SPOKEN TUTORIAL • IIT BOMBAY & EDUPYRAMIDS',
+        title: 'Completion of R Training',
+        desc: 'Completed online exam on 16 November 2026 with a score of 92.50% (Credits: 2). Course material provided by EduPyramids, SINE, IIT Bombay and Spoken Tutorial developed at IIT Bombay. Certified by Prof. Kannan M Moudgalya (Certificate ID: 49415956JU). Awarded to Nandhini Sowndhirarajan.',
+        scoreText: 'Score: 92.50% • 2 Credits',
+        isElite: true,
+        src: 'assets/images/cert-r-training-iit-bombay.jpg'
       }
     ];
 
