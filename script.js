@@ -948,6 +948,14 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreText: 'Score: 92.50% • 2 Credits',
         isElite: true,
         src: 'assets/images/cert-r-training-iit-bombay.jpg'
+      },
+      {
+        tag: 'SOLOLEARN • COURSE CERTIFICATE',
+        title: 'Introduction to Java',
+        desc: 'Completed on September 10, 2024. Demonstrating theoretical and practical understanding of Java programming fundamentals and core concepts. Certified by Yeva Hyusyan, Chief Executive Officer, Sololearn (Certificate: CC-PPEZKPPQ). Awarded to Nandhini S by Sololearn.',
+        scoreText: 'Sololearn Verified • 2024',
+        isElite: true,
+        src: 'assets/images/cert-sololearn-introduction-to-java.jpg'
       }
     ];
 
