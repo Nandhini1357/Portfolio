@@ -1306,6 +1306,7 @@ button {
   padding: 18px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -1319,19 +1320,21 @@ button {
   display: none !important;
 }
 
-.skill-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
 .skill-card-name {
   font-size: 1.12rem;
   font-weight: 700;
   color: var(--text-white);
-  margin: 0;
+  margin: 0 0 6px 0;
   letter-spacing: -0.2px;
+}
+
+.skill-card-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.7);
+  flex-shrink: 0;
 }
 
 .skill-percent-badge {
@@ -1364,11 +1367,11 @@ button {
 }
 
 .skill-card-caption {
-  font-size: 0.82rem;
-  color: #78899d;
+  font-size: 0.85rem;
+  color: #8b9bb0;
   font-weight: 400;
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 /* --- 10. Certificates Section (3 Columns in Row 1, 3 Columns in Row 2) --- */
