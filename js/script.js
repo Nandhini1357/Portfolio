@@ -218,6 +218,73 @@ document.addEventListener('DOMContentLoaded', () => {
     revealItems.forEach((item) => item.classList.add('revealed'));
   }
 
+  /* --- 5. Hero Typewriter Animation --- */
+  const initHeroTypewriter = () => {
+    const typewriterEl = document.getElementById('hero-typewriter-text');
+    if (!typewriterEl) return;
+
+    const phrases = [
+      'Software Developer',
+      'Information Technology Student',
+      'Problem Solver',
+      'Cloud & Technology Enthusiast'
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = phrases[0].length;
+    let isDeleting = true;
+    let isHolding = true;
+
+    const TYPE_SPEED = 75;
+    const DELETE_SPEED = 38;
+    const HOLD_FULL = 2000;
+    const HOLD_EMPTY = 400;
+
+    const tick = () => {
+      const currentPhrase = phrases[phraseIndex];
+
+      if (isHolding) return;
+
+      if (!isDeleting) {
+        charIndex++;
+        typewriterEl.textContent = currentPhrase.substring(0, charIndex);
+
+        if (charIndex === currentPhrase.length) {
+          isHolding = true;
+          setTimeout(() => {
+            isHolding = false;
+            isDeleting = true;
+            tick();
+          }, HOLD_FULL);
+          return;
+        }
+        setTimeout(tick, TYPE_SPEED);
+      } else {
+        charIndex--;
+        typewriterEl.textContent = currentPhrase.substring(0, charIndex);
+
+        if (charIndex === 0) {
+          isHolding = true;
+          isDeleting = false;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(() => {
+            isHolding = false;
+            tick();
+          }, HOLD_EMPTY);
+          return;
+        }
+        setTimeout(tick, DELETE_SPEED);
+      }
+    };
+
+    setTimeout(() => {
+      isHolding = false;
+      tick();
+    }, 1800);
+  };
+
+  initHeroTypewriter();
+
 
 
   /* --- 6. Gallery & Certificate Lightbox Modal --- */
