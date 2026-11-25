@@ -218,64 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
     revealItems.forEach((item) => item.classList.add('revealed'));
   }
 
-  /* --- 5. Hero Typewriter Animations --- */
-  // 5a. First Line Greeting Typewriter: "Hi, I'm Nandhini "
-  const initGreetingTypewriter = () => {
-    const greetingEl = document.getElementById('hero-greeting-text');
-    if (!greetingEl) return;
-
-    const phrase = "Hi, I'm Nandhini ";
-    let charIndex = phrase.length;
-    let isDeleting = true;
-    let isHolding = true;
-
-    const TYPE_SPEED = 85;
-    const DELETE_SPEED = 45;
-    const HOLD_FULL = 2200;
-    const HOLD_EMPTY = 450;
-
-    const tick = () => {
-      if (isHolding) return;
-
-      if (!isDeleting) {
-        charIndex++;
-        greetingEl.textContent = phrase.substring(0, charIndex);
-
-        if (charIndex === phrase.length) {
-          isHolding = true;
-          setTimeout(() => {
-            isHolding = false;
-            isDeleting = true;
-            tick();
-          }, HOLD_FULL);
-          return;
-        }
-        setTimeout(tick, TYPE_SPEED);
-      } else {
-        charIndex--;
-        greetingEl.textContent = phrase.substring(0, charIndex);
-
-        if (charIndex === 0) {
-          isHolding = true;
-          isDeleting = false;
-          setTimeout(() => {
-            isHolding = false;
-            tick();
-          }, HOLD_EMPTY);
-          return;
-        }
-        setTimeout(tick, DELETE_SPEED);
-      }
-    };
-
-    // Initial pause on the pre-rendered greeting before beginning deletion
-    setTimeout(() => {
-      isHolding = false;
-      tick();
-    }, 2400);
-  };
-
-  // 5b. Subtitle Role Typewriter: cycles through exact phrases
+  /* --- 5. Hero Typewriter Animation (Subtitle Roles) --- */
+  // Cycles through exact phrases:
   // 1. Information Technology Student
   // 2. Aspiring Software Developer
   const initHeroTypewriter = () => {
@@ -341,7 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1800);
   };
 
-  initGreetingTypewriter();
   initHeroTypewriter();
 
 

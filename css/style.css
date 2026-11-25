@@ -952,30 +952,32 @@ body.preloader-active {
   z-index: 2;
 }
 
-/* Typing Animation (First Line Greeting) */
-.hero-greeting-typewriter {
+/* Greeting (Hi, I'm Nandhini 👋) */
+.hero-greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-heading);
-  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
   font-weight: 700;
   color: var(--cyan);
   margin-bottom: 10px;
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  letter-spacing: 0.5px;
-}
-
-.hero-greeting-text {
-  color: var(--cyan);
+  letter-spacing: 0.3px;
   text-shadow: 0 0 16px var(--cyan-glow);
 }
 
-.hero-greeting-cursor {
+.wave-emoji {
   display: inline-block;
-  margin-left: 2px;
-  color: var(--cyan);
-  font-weight: 300;
-  animation: heroCursorBlink 0.85s step-start infinite;
+  transform-origin: 70% 70%;
+  animation: waveHand 2.4s infinite;
+}
+
+@keyframes waveHand {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
 }
 
 .hero-name-heading {
@@ -1060,6 +1062,30 @@ body.preloader-active {
   background: linear-gradient(135deg, #38bdf8 0%, #00c8ff 100%);
   color: #000000;
   box-shadow: 0 0 34px rgba(0, 200, 255, 0.75);
+  transform: translateY(-3px);
+}
+
+.btn-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(0, 200, 255, 0.05);
+  border: 1.5px solid rgba(0, 200, 255, 0.35);
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 0.96rem;
+  padding: 13px 26px;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(0, 200, 255, 0.12);
+  border-color: var(--cyan);
+  color: #ffffff;
+  box-shadow: 0 0 22px rgba(0, 200, 255, 0.35);
   transform: translateY(-3px);
 }
 
@@ -3987,17 +4013,9 @@ body[data-theme="light"] {
 }
 
 /* --- 3. Home / Hero Section (Light Mode) --- */
-[data-theme="light"] .hero-greeting-typewriter {
-  color: #0284c7;
-}
-
-[data-theme="light"] .hero-greeting-text {
+[data-theme="light"] .hero-greeting {
   color: #0284c7;
   text-shadow: none;
-}
-
-[data-theme="light"] .hero-greeting-cursor {
-  color: #0284c7;
 }
 
 [data-theme="light"] .hero-name-heading {
@@ -4029,6 +4047,20 @@ body[data-theme="light"] {
   background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
   color: #ffffff;
   box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5);
+}
+
+[data-theme="light"] .btn-hero-secondary {
+  background: #ffffff;
+  border-color: rgba(15, 23, 42, 0.18);
+  color: #0f172a;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .btn-hero-secondary:hover {
+  background: rgba(2, 132, 199, 0.06);
+  border-color: #0284c7;
+  color: #0284c7;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.2);
 }
 
 [data-theme="light"] .hero-social-title {
