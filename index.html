@@ -148,32 +148,30 @@
         
         <div class="hero-two-col">
           
-          <!-- LEFT COLUMN: Greeting, Name, Typewriter, Intro, Buttons & Social Links -->
+          <!-- LEFT COLUMN: Typing Greeting, Name, Typing Subtitle, Intro, Resume Button & Social Links -->
           <div class="hero-left-content reveal-item">
-            <span class="hero-greeting">HELLO, I'M</span>
             
+            <!-- Typing Animation (First Line) -->
+            <div class="hero-greeting-typewriter" aria-label="Greeting">
+              <span class="hero-greeting-text" id="hero-greeting-text">Hi, I'm Nandhini </span><span class="hero-greeting-cursor" aria-hidden="true">|</span>
+            </div>
+            
+            <!-- Main Heading -->
             <h1 class="hero-name-heading">NANDHINI S</h1>
 
-            <!-- Animated Typewriter Subtitle -->
-            <div class="hero-typewriter-container" aria-label="Software Developer">
-              <span class="hero-typewriter-text" id="hero-typewriter-text">Software Developer</span><span class="hero-typewriter-cursor" aria-hidden="true">|</span>
+            <!-- Animated Subtitle Typing Animation -->
+            <div class="hero-typewriter-container" aria-label="Role designations">
+              <span class="hero-typewriter-text" id="hero-typewriter-text">Information Technology Student</span><span class="hero-typewriter-cursor" aria-hidden="true">|</span>
             </div>
 
             <!-- Introduction Paragraph -->
             <p class="hero-intro-text">
-              I'm a third-year Information Technology student passionate about software development, problem-solving, and exploring emerging technologies. I enjoy building practical projects, learning new tools, and turning ideas into real-world applications.
+              I'm a third-year Information Technology student passionate about software development, problem-solving, and exploring emerging technologies. I enjoy building practical projects, learning new tools, and turning ideas into real-world applications. My interests include Full Stack Development, Cloud Computing, Artificial Intelligence, and software engineering.
             </p>
 
-            <!-- Call-to-Action Buttons -->
+            <!-- Call-to-Action Button (Single Download Resume Button) -->
             <div class="hero-cta-group">
-              <a href="#projects" class="btn btn-hero-primary">
-                <span>Explore My Projects</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
-              <a href="assets/docs/Nandhini_S_Resume.pdf" download="Nandhini_S_Resume.pdf" class="btn btn-hero-secondary" target="_blank" rel="noopener noreferrer">
+              <a href="assets/docs/Nandhini_S_Resume.pdf" download="Nandhini_S_Resume.pdf" class="btn btn-hero-primary" target="_blank" rel="noopener noreferrer">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                   <polyline points="7 10 12 15 17 10"></polyline>
@@ -217,7 +215,7 @@
 
           </div>
 
-          <!-- RIGHT COLUMN: Circular Portrait with Decorative Animated Rings & 3 Independent Floating Badges -->
+          <!-- RIGHT COLUMN: Circular Portrait with Clean Decorative Animated Rings -->
           <div class="hero-right-visual reveal-item">
             <div class="hero-portrait-stage">
               
@@ -233,50 +231,6 @@
               <!-- Central Circular Profile Photo Frame with Floating Animation -->
               <div class="hero-photo-circle">
                 <img src="assets/images/nandhini-profile.jpg" alt="Nandhini S Portrait Photo" class="hero-photo-img" width="280" height="280">
-              </div>
-
-              <!-- 3 Independent Floating Technology Elements (Not in an orbit) -->
-              <!-- Element 1: Full Stack & Code (Top Left) -->
-              <div class="hero-float-card hero-float-card-1" title="Full Stack Developer">
-                <div class="hero-float-icon-box code-accent">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="16 18 22 12 16 6"></polyline>
-                    <polyline points="8 6 2 12 8 18"></polyline>
-                  </svg>
-                </div>
-                <div class="hero-float-text-box">
-                  <span class="hero-float-title">Full Stack</span>
-                  <span class="hero-float-sub">Web &amp; Software</span>
-                </div>
-              </div>
-
-              <!-- Element 2: Cloud Computing (Bottom Right) -->
-              <div class="hero-float-card hero-float-card-2" title="AWS Cloud Builder">
-                <div class="hero-float-icon-box cloud-accent">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-                    <path d="M6 16.5C4.07 16.5 2.5 14.93 2.5 13C2.5 11.24 3.79 9.8 5.5 9.55C6.12 6.95 8.44 5 11.25 5C14.54 5 17.24 7.45 17.69 10.64C19.57 10.96 21 12.58 21 14.5C21 16.71 19.21 18.5 17 18.5H6" stroke="#ff9900" stroke-width="2" stroke-linecap="round"/>
-                    <path d="M8 19C12 21 15 20 18 17" stroke="#ff9900" stroke-width="1.8" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div class="hero-float-text-box">
-                  <span class="hero-float-title">Cloud Builder</span>
-                  <span class="hero-float-sub">AWS &amp; DevOps</span>
-                </div>
-              </div>
-
-              <!-- Element 3: Problem Solver & Logic (Top Right) -->
-              <div class="hero-float-card hero-float-card-3" title="Problem Solver">
-                <div class="hero-float-icon-box logic-accent">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                  </svg>
-                </div>
-                <div class="hero-float-text-box">
-                  <span class="hero-float-title">IT Student</span>
-                  <span class="hero-float-sub">Problem Solver</span>
-                </div>
               </div>
 
             </div>
