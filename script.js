@@ -8,6 +8,94 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
+  /* --- 0. Animated Page Preloader Controller --- */
+  const initPagePreloader = () => {
+    const preloader = document.getElementById('page-preloader');
+    if (!preloader) return;
+
+    const fillBar = document.getElementById('preloader-bar-fill');
+    const percentLabel = document.getElementById('preloader-percentage');
+    const statusLabel = document.getElementById('preloader-status-text');
+
+    // Ensure preloader-active class is present on body to lock background scroll
+    document.body.classList.add('preloader-active');
+
+    const TOTAL_DURATION = 1800; // 1.8 seconds (professional 1.5-2.5s range)
+    const startTime = performance.now();
+    let isDismissed = false;
+    let animationFrameId = null;
+
+    const updateProgress = (currentTime) => {
+      if (isDismissed) return;
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / TOTAL_DURATION, 1);
+
+      // Smooth custom easing (swift start, fluid progression, polished finish)
+      const eased = 1 - Math.pow(1 - progress, 2.6);
+      const currentPercent = Math.min(Math.floor(eased * 100), 100);
+
+      if (fillBar) {
+        fillBar.style.width = `${currentPercent}%`;
+      }
+      if (percentLabel) {
+        percentLabel.textContent = `${currentPercent}%`;
+      }
+
+      if (progress < 0.35 && statusLabel) {
+        statusLabel.textContent = 'INITIALIZING...';
+      } else if (progress < 0.8 && statusLabel) {
+        statusLabel.textContent = 'LOADING ASSETS...';
+      } else if (progress >= 0.8 && statusLabel) {
+        statusLabel.textContent = 'FINALIZING...';
+      }
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(updateProgress);
+      } else {
+        completePreloader();
+      }
+    };
+
+    const completePreloader = () => {
+      if (isDismissed) return;
+      isDismissed = true;
+
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+
+      if (fillBar) fillBar.style.width = '100%';
+      if (percentLabel) percentLabel.textContent = '100%';
+      if (statusLabel) statusLabel.textContent = 'PORTFOLIO READY';
+      preloader.classList.add('preloader-completed');
+
+      // Brief 160ms pause at 100% so the user gets clean visual feedback
+      setTimeout(() => {
+        preloader.classList.add('preloader-hidden');
+        document.body.classList.remove('preloader-active');
+
+        // Remove from render flow after smooth fade out
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 550);
+      }, 160);
+    };
+
+    // Kick off progress animation on first frame
+    animationFrameId = requestAnimationFrame(updateProgress);
+
+    // Safeguard timeout (2.5s) to guarantee loading screen NEVER remains stuck indefinitely
+    const MAX_TIMEOUT = 2500;
+    setTimeout(() => {
+      if (!isDismissed) {
+        completePreloader();
+      }
+    }, MAX_TIMEOUT);
+  };
+
+  initPagePreloader();
+
   /* --- 1. Responsive Sticky Navbar & Mobile Drawer --- */
   const navbar = document.getElementById('navbar');
   const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -1217,4 +1305,250 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  /* --- 9. Digital Skill Badges Lightbox & Interaction --- */
+  const badgeCards = document.querySelectorAll('.digital-badge-card');
+  if (badgeCards.length) {
+    const badgesAlbumData = Array.from(badgeCards).map((card) => ({
+      src: card.getAttribute('data-src') || (card.querySelector('img') ? card.querySelector('img').getAttribute('src') : ''),
+      caption: card.getAttribute('data-caption') || (card.querySelector('.badge-title') ? card.querySelector('.badge-title').textContent : '')
+    }));
+
+    badgeCards.forEach((card, index) => {
+      const openBadge = () => {
+        const src = card.getAttribute('data-src');
+        const caption = card.getAttribute('data-caption');
+        openLightbox(src, caption, false, badgesAlbumData, index);
+      };
+
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        openBadge();
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openBadge();
+        }
+      });
+    });
+  }
+
+  /* --- 10. Centralized Dark / Light Mode Theme Toggle System --- */
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const THEME_STORAGE_KEY = 'portfolio-theme';
+
+  const getPreferredTheme = () => {
+    try {
+      const saved = localStorage.getItem(THEME_STORAGE_KEY);
+      if (saved === 'light' || saved === 'dark') {
+        return saved;
+      }
+    } catch (e) {}
+    // Default to dark theme as in original design
+    return 'dark';
+  };
+
+  const applyTheme = (theme, withTransition = false) => {
+    if (withTransition) {
+      document.documentElement.classList.add('theme-transitioning');
+      if (document.body) {
+        document.body.classList.add('theme-transitioning');
+      }
+    }
+    
+    document.documentElement.setAttribute('data-theme', theme);
+    if (document.body) {
+      document.body.setAttribute('data-theme', theme);
+    }
+
+    if (themeToggleBtn) {
+      const isLight = theme === 'light';
+      themeToggleBtn.setAttribute('title', isLight ? 'Switch to Dark Mode (🌙)' : 'Switch to Light Mode (☀️)');
+      themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+    }
+
+    if (typeof window.updateParticleTheme === 'function') {
+      window.updateParticleTheme(theme);
+    }
+
+    window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
+
+    if (withTransition) {
+      setTimeout(() => {
+        document.documentElement.classList.remove('theme-transitioning');
+        if (document.body) {
+          document.body.classList.remove('theme-transitioning');
+        }
+      }, 350);
+    }
+  };
+
+  if (themeToggleBtn) {
+    // Sync initial state
+    const currentTheme = document.documentElement.getAttribute('data-theme') || getPreferredTheme();
+    applyTheme(currentTheme, false);
+
+    const handleToggleClick = (e) => {
+      e.preventDefault();
+      const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+      } catch (err) {
+        console.warn('Unable to persist theme to localStorage:', err);
+      }
+      applyTheme(newTheme, true);
+    };
+
+    themeToggleBtn.addEventListener('click', handleToggleClick);
+    themeToggleBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        handleToggleClick(e);
+      }
+    });
+  }
+
+  // Multi-tab real-time synchronization
+  window.addEventListener('storage', (e) => {
+    if (e.key === THEME_STORAGE_KEY && (e.newValue === 'light' || e.newValue === 'dark')) {
+      applyTheme(e.newValue, false);
+    }
+  });
+
+  /* --- 11. Futuristic Developer Particle Network Canvas --- */
+  const initBgParticles = () => {
+    const canvas = document.getElementById('bg-particles-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+    let animationFrameId = null;
+
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 24 : 46;
+    const maxDistance = isMobile ? 95 : 130;
+
+    let currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+
+    // Particle color palettes based on active theme
+    const getColors = (theme) => {
+      if (theme === 'light') {
+        return {
+          particle1: 'rgba(2, 132, 199, 0.45)',
+          particle2: 'rgba(124, 58, 237, 0.35)',
+          line: (alpha) => `rgba(2, 132, 199, ${alpha * 0.16})`
+        };
+      }
+      return {
+        particle1: 'rgba(0, 200, 255, 0.55)',
+        particle2: 'rgba(168, 85, 247, 0.45)',
+        line: (alpha) => `rgba(0, 200, 255, ${alpha * 0.22})`
+      };
+    };
+
+    let colors = getColors(currentTheme);
+
+    window.updateParticleTheme = (theme) => {
+      currentTheme = theme;
+      colors = getColors(theme);
+    };
+
+    class Particle {
+      constructor() {
+        this.reset(true);
+      }
+      reset(randomY = false) {
+        this.x = Math.random() * width;
+        this.y = randomY ? Math.random() * height : height + 10;
+        this.radius = Math.random() * 2 + 1;
+        this.vx = (Math.random() - 0.5) * 0.55;
+        this.vy = -(Math.random() * 0.5 + 0.2); // Gentle upward drift
+        this.colorType = Math.random() > 0.3 ? 'particle1' : 'particle2';
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Wrap around horizontally
+        if (this.x < -10) this.x = width + 10;
+        if (this.x > width + 10) this.x = -10;
+
+        // Reset if float off top
+        if (this.y < -15) {
+          this.reset(false);
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = colors[this.colorType];
+        ctx.fill();
+      }
+    }
+
+    let particles = [];
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    const render = () => {
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw faint connections between nearby particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < maxDistance) {
+            const alpha = 1 - dist / maxDistance;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = colors.line(alpha);
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Update and draw each particle
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+
+      if (!document.hidden) {
+        animationFrameId = requestAnimationFrame(render);
+      }
+    };
+
+    // Pause animation when page tab is hidden
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      } else {
+        animationFrameId = requestAnimationFrame(render);
+      }
+    });
+
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }, 150);
+    }, { passive: true });
+
+    // Start particle animation loop
+    render();
+  };
+
+  initBgParticles();
 });

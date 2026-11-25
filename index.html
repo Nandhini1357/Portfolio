@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>NANDHINI S | Personal Developer Portfolio</title>
-  <meta name="description" content="Personal portfolio of Nandhini S, Information Technology Student &amp; AWS Student Builder Group Leader at Sri Krishna College of Technology, Coimbatore.">
-  <meta name="keywords" content="Nandhini S, Developer Portfolio, Information Technology, SKCT, AWS Student Builder Group Leader, Software Engineering, Coimbatore">
+  <meta name="description" content="Personal portfolio of Nandhini S, Information Technology Student &amp; Aspiring Software Developer at Sri Krishna College of Technology, Coimbatore.">
+  <meta name="keywords" content="Nandhini S, Developer Portfolio, Information Technology, SKCT, Aspiring Software Developer, Software Engineering, Coimbatore">
   <meta name="author" content="Nandhini S">
 
   <!-- Open Graph Meta -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="NANDHINI S — Developer Portfolio">
-  <meta property="og:description" content="Information Technology Student | AWS Student Builder Group Leader">
+  <meta property="og:description" content="Information Technology Student | Aspiring Software Developer">
   
   <!-- Google Fonts Preconnect & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +21,162 @@
 
   <!-- Vanilla CSS Stylesheet -->
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-  <!-- Background Decorative Grid & Subtle Radial Glow -->
-  <div class="bg-grid-wrapper" aria-hidden="true">
+  <!-- Immediate Theme Loader to prevent flash of wrong theme -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('portfolio-theme');
+        if (savedTheme === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <noscript>
+    <style>
+      .page-preloader { display: none !important; }
+      body.preloader-active { overflow: auto !important; }
+    </style>
+  </noscript>
+</head>
+<body class="preloader-active">
+
+  <!-- =========================================================================
+       PAGE PRELOADER / INITIAL ANIMATED LOADING SCREEN
+       ========================================================================= -->
+  <div id="page-preloader" class="page-preloader" role="status" aria-live="polite" aria-label="Loading Portfolio">
+    <div class="preloader-backdrop">
+      <div class="preloader-glow preloader-glow-cyan"></div>
+      <div class="preloader-glow preloader-glow-purple"></div>
+    </div>
+
+    <div class="preloader-content">
+      <!-- Circular Initials Emblem with Animated Orbit Rings -->
+      <div class="preloader-emblem">
+        <!-- Outer Orbit Ring 1 (Dashed Cyan, Clockwise) -->
+        <div class="preloader-ring preloader-ring-outer"></div>
+        <!-- Middle Orbit Ring 2 (Dual-tone Gradient with Orbital Nodes, Counter-Clockwise) -->
+        <div class="preloader-ring preloader-ring-middle">
+          <span class="preloader-node preloader-node-1"></span>
+          <span class="preloader-node preloader-node-2"></span>
+        </div>
+        <!-- Inner Orbit Ring 3 (Dotted Accent, Clockwise) -->
+        <div class="preloader-ring preloader-ring-inner"></div>
+
+        <!-- Central Circle with "NA" Initials -->
+        <div class="preloader-central-circle">
+          <span class="preloader-initials">NA</span>
+        </div>
+      </div>
+
+      <!-- Horizontal Loading Progress Bar & Percentage -->
+      <div class="preloader-progress-wrap">
+        <div class="preloader-bar-track">
+          <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+        </div>
+        <div class="preloader-status-row">
+          <span class="preloader-status-text" id="preloader-status-text">INITIALIZING...</span>
+          <span class="preloader-percentage" id="preloader-percentage">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Futuristic Developer Theme Architecture -->
+  <div class="bg-grid-wrapper" id="bg-universe" aria-hidden="true">
     <div class="bg-grid-lines"></div>
-    <div class="bg-radial-cyan"></div>
+    <div class="bg-gradient-glow bg-glow-cyan"></div>
+    <div class="bg-gradient-glow bg-glow-purple"></div>
+    <div class="bg-gradient-glow bg-glow-amber"></div>
+
+    <!-- Futuristic Orbit Rings in Background -->
+    <div class="bg-orbit-ring bg-orbit-1"></div>
+    <div class="bg-orbit-ring bg-orbit-2"></div>
+    <div class="bg-orbit-ring bg-orbit-3"></div>
+
+    <!-- Interactive Particle Canvas -->
+    <canvas id="bg-particles-canvas" class="bg-particles-canvas"></canvas>
+
+    <!-- Floating Developer Technology Icons & Symbols -->
+    <div class="bg-floating-icons">
+      <!-- 1. Python -->
+      <div class="float-icon float-icon-1" title="Python">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+          <path d="M11.5 3C7.5 3 7.5 4.7 7.5 4.7V6.5H12V7.4H5.3C3.5 7.4 2 8.9 2 11.2C2 13.6 3.2 14.3 4.5 14.3H5.8V12.5C5.8 10.7 7.3 9.2 9.1 9.2H13.6C15 9.2 16.1 8 16.1 6.5C16.1 4.3 14.7 3 11.5 3ZM9.8 4.6C10.3 4.6 10.7 5 10.7 5.5C10.7 6 10.3 6.4 9.8 6.4C9.3 6.4 8.9 6 8.9 5.5C8.9 5 9.3 4.6 9.8 4.6Z" fill="#38bdf8"/>
+          <path d="M12.5 21C16.5 21 16.5 19.3 16.5 19.3V17.5H12V16.6H18.7C20.5 16.6 22 15.1 22 12.8C22 10.4 20.8 9.7 19.5 9.7H18.2V11.5C18.2 13.3 16.7 14.8 14.9 14.8H10.4C9 14.8 7.9 16 7.9 17.5C7.9 19.7 9.3 21 12.5 21ZM14.2 19.4C13.7 19.4 13.3 19 13.3 18.5C13.3 18 13.7 17.6 14.2 17.6C14.7 17.6 15.1 18 15.1 18.5C15.1 19 14.7 19.4 14.2 19.4Z" fill="#ffd700"/>
+        </svg>
+      </div>
+      <!-- 2. React -->
+      <div class="float-icon float-icon-2" title="React">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="none">
+          <ellipse cx="12" cy="12" rx="3.5" ry="9" stroke="#00c8ff" stroke-width="1.6" transform="rotate(30 12 12)"/>
+          <ellipse cx="12" cy="12" rx="3.5" ry="9" stroke="#00c8ff" stroke-width="1.6" transform="rotate(90 12 12)"/>
+          <ellipse cx="12" cy="12" rx="3.5" ry="9" stroke="#00c8ff" stroke-width="1.6" transform="rotate(150 12 12)"/>
+          <circle cx="12" cy="12" r="2" fill="#00c8ff"/>
+        </svg>
+      </div>
+      <!-- 3. Java -->
+      <div class="float-icon float-icon-3" title="Java">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+          <path d="M7 16C9 17 14 17 17 16" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 19C9 20.5 15 20.5 18 19" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+          <path d="M10 6C12 8 9 10 11 12" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M13 5C15 7 12 9 14 11" stroke="#f97316" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <!-- 4. C++ -->
+      <div class="float-icon float-icon-4" title="C++">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+          <path d="M10 7C7.5 7 5.5 9 5.5 12C5.5 15 7.5 17 10 17C11.5 17 12.8 16.3 13.5 15.2" stroke="#00c8ff" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M16 9.5V14.5M13.5 12H18.5" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/>
+          <path d="M21 9.5V14.5M18.5 12H23.5" stroke="#a855f7" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <!-- 5. GitHub -->
+      <div class="float-icon float-icon-5" title="GitHub">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21V19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6.01 9.5 6.67 8.79C6.57 8.54 6.22 7.51 6.77 6.13C6.77 6.13 7.61 5.86 9.54 7.16C10.35 6.94 11.19 6.83 12.03 6.83C12.87 6.83 13.71 6.94 14.52 7.16C16.45 5.86 17.29 6.13 17.29 6.13C17.84 7.51 17.49 8.54 17.39 8.79C18.06 9.5 18.44 10.39 18.44 11.5C18.44 15.32 16.1 16.16 13.87 16.41C14.23 16.72 14.55 17.33 14.55 18.28V21C14.55 21.28 14.71 21.59 15.23 21.49C19.2 20.16 22.06 16.42 22.06 12C22.06 6.477 17.58 2 12 2Z"/>
+        </svg>
+      </div>
+      <!-- 6. Cloud / AWS -->
+      <div class="float-icon float-icon-6" title="Cloud Computing">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+          <path d="M6 16.5C4.07 16.5 2.5 14.93 2.5 13C2.5 11.24 3.79 9.8 5.5 9.55C6.12 6.95 8.44 5 11.25 5C14.54 5 17.24 7.45 17.69 10.64C19.57 10.96 21 12.58 21 14.5C21 16.71 19.21 18.5 17 18.5H6" stroke="#ff9900" stroke-width="2" stroke-linecap="round"/>
+          <path d="M8 19C12 21 15 20 18 17" stroke="#ff9900" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <!-- 7. Database / MySQL -->
+      <div class="float-icon float-icon-7" title="Database">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#38bdf8" stroke-width="2">
+          <ellipse cx="12" cy="5" rx="9" ry="3"/>
+          <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/>
+        </svg>
+      </div>
+      <!-- 8. Code Tag: </> -->
+      <div class="float-icon float-icon-8 float-code-glyph" title="Code Tag">
+        &lt;/&gt;
+      </div>
+      <!-- 9. Code Braces: { } -->
+      <div class="float-icon float-icon-9 float-code-glyph" title="Code Blocks">
+        { }
+      </div>
+      <!-- 10. Code Arrow: => -->
+      <div class="float-icon float-icon-10 float-code-glyph" title="Arrow Functions">
+        =&gt;
+      </div>
+      <!-- 11. JavaScript Badge -->
+      <div class="float-icon float-icon-11 float-code-badge" title="JavaScript">
+        JS
+      </div>
+      <!-- 12. Terminal Prompt -->
+      <div class="float-icon float-icon-12 float-code-glyph" title="Terminal">
+        &gt;_
+      </div>
+    </div>
   </div>
 
   <!-- HEADER / STICKY NAVBAR (Exact reference match) -->
@@ -52,6 +201,17 @@
           <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
+
+      <!-- Theme Switcher Toggle Pill (Dark / Light Mode) -->
+      <div class="nav-theme-wrap">
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle between dark and light mode" title="Switch to Light Mode">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-icon icon-sun" aria-hidden="true">☀️</span>
+            <span class="theme-toggle-icon icon-moon" aria-hidden="true">🌙</span>
+            <span class="theme-toggle-slider"></span>
+          </span>
+        </button>
+      </div>
 
       <!-- Responsive Mobile Hamburger -->
       <button type="button" class="hamburger-btn" id="hamburger-btn" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
@@ -78,11 +238,11 @@
             <h1 class="hero-name-heading">NANDHINI S</h1>
 
             <p class="hero-title-role">
-              Information Technology Student | AWS Student Builder Group Leader
+              Information Technology Student | Aspiring Software Developer
             </p>
 
             <p class="hero-intro-text">
-              Passionate about software development, cloud computing, problem solving and building innovative technology solutions. Interested in exploring modern technologies and creating practical applications.
+              I'm a third-year Information Technology student passionate about software development, problem-solving, and exploring emerging technologies. I enjoy building practical projects, learning new tools, and turning ideas into real-world applications. My interests include Full Stack Development, Cloud Computing, Artificial Intelligence, and software engineering.
             </p>
           </div>
 
@@ -436,149 +596,7 @@
             </div>
           </div>
 
-          <!-- ITEM 2: VARNAM'26 National Level Tech Fest (Multi-Photo Album) -->
-          <div class="gallery-card gallery-card-carousel reveal-item" data-gallery-group="varnam-26">
-            <div class="gallery-image-box gallery-carousel-box">
-              <div class="gallery-slides">
-                <div class="gallery-slide active" data-src="assets/images/varnam26-team.jpg" data-caption="VARNAM’26 — National Level Tech Fest at Karpagam Institute of Technology">
-                  <img src="assets/images/varnam26-team.jpg" alt="VARNAM'26 Tech Fest Team at Karpagam Institute of Technology" class="gallery-img" style="object-position: center 25%;" loading="lazy">
-                </div>
-                <div class="gallery-slide" data-src="assets/images/varnam26-mern-workshop.png" data-caption="VARNAM’26 — MERN Full Stack Development Hands-On Workshop Session">
-                  <img src="assets/images/varnam26-mern-workshop.png" alt="VARNAM'26 MERN Full Stack Development Workshop" class="gallery-img" style="object-position: center center;" loading="lazy">
-                </div>
-                <div class="gallery-slide" data-src="assets/images/varnam26-team-gps.jpg" data-caption="VARNAM’26 — Team Participation Highlights &amp; Campus Expo (05/02/2026)">
-                  <img src="assets/images/varnam26-team-gps.jpg" alt="VARNAM'26 Participation Highlights" class="gallery-img" style="object-position: center 25%;" loading="lazy">
-                </div>
-              </div>
-
-              <!-- In-Card Side Navigation Arrows -->
-              <button type="button" class="gallery-nav-arrow gallery-nav-prev" aria-label="Previous photo" title="Previous photo">
-                <span aria-hidden="true">&#x2039;</span>
-              </button>
-              <button type="button" class="gallery-nav-arrow gallery-nav-next" aria-label="Next photo" title="Next photo">
-                <span aria-hidden="true">&#x203A;</span>
-              </button>
-
-              <!-- Photo Counter & Album Badge -->
-              <div class="gallery-album-badge">
-                <span>📸</span>
-                <span>3 PHOTOS</span>
-              </div>
-              <div class="gallery-counter-badge">
-                <span class="gallery-current-slide">1</span> / <span class="gallery-total-slides">3</span>
-              </div>
-
-              <button type="button" class="gallery-overlay-btn gallery-carousel-open-btn" aria-label="Enlarge image in theater mode">
-                <span class="gallery-zoom-circle">🔍</span>
-              </button>
-            </div>
-
-            <div class="gallery-caption-box">
-              <div class="gallery-category-tag">National Tech Fest • VARNAM’26</div>
-              <h4 class="gallery-item-title">VARNAM’26 – National Level Tech Fest</h4>
-              <p class="gallery-item-desc">Participated in VARNAM’26 – National Level Tech Fest at Karpagam Institute of Technology. Gained hands-on exposure and strengthened problem-solving and development skills.</p>
-              <div class="gallery-event-meta">
-                <span class="gallery-meta-item"><strong>Events:</strong> Mind Maze, Code Twins</span>
-                <span class="gallery-meta-item"><strong>Workshop:</strong> MERN Full Stack Development</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 3: Hands-on Session on Ethereum Blockchain (Multi-Photo Album) -->
-          <div class="gallery-card gallery-card-carousel reveal-item" data-gallery-group="ethereum-blockchain">
-            <div class="gallery-image-box gallery-carousel-box">
-              <div class="gallery-slides">
-                <div class="gallery-slide active" data-src="assets/images/ethereum-blockchain-session.jpg" data-caption="Building On-Chain Apps on Ethereum Blockchain — Hands-on Session by Dept. of AI &amp; DS at SKCT (31/01/2026)">
-                  <img src="assets/images/ethereum-blockchain-session.jpg" alt="Building On-Chain Apps on Ethereum Blockchain Session" class="gallery-img" style="object-position: center center;" loading="lazy">
-                </div>
-                <div class="gallery-slide" data-src="assets/images/ethereum-blockchain-lab.jpg" data-caption="Ethereum Blockchain Development — Practical Lab &amp; On-Chain App Session at SKCT">
-                  <img src="assets/images/ethereum-blockchain-lab.jpg" alt="Ethereum Blockchain Practical Lab Session" class="gallery-img" style="object-position: center center;" loading="lazy">
-                </div>
-              </div>
-
-              <!-- In-Card Side Navigation Arrows -->
-              <button type="button" class="gallery-nav-arrow gallery-nav-prev" aria-label="Previous photo" title="Previous photo">
-                <span aria-hidden="true">&#x2039;</span>
-              </button>
-              <button type="button" class="gallery-nav-arrow gallery-nav-next" aria-label="Next photo" title="Next photo">
-                <span aria-hidden="true">&#x203A;</span>
-              </button>
-
-              <!-- Photo Counter & Album Badge -->
-              <div class="gallery-album-badge">
-                <span>📸</span>
-                <span>2 PHOTOS</span>
-              </div>
-              <div class="gallery-counter-badge">
-                <span class="gallery-current-slide">1</span> / <span class="gallery-total-slides">2</span>
-              </div>
-
-              <button type="button" class="gallery-overlay-btn gallery-carousel-open-btn" aria-label="Enlarge image in theater mode">
-                <span class="gallery-zoom-circle">🔍</span>
-              </button>
-            </div>
-
-            <div class="gallery-caption-box">
-              <div class="gallery-category-tag">Hands-On Session • Web3 &amp; Blockchain</div>
-              <h4 class="gallery-item-title">Building On-Chain Apps on Ethereum Blockchain</h4>
-              <p class="gallery-item-desc">Glad to have participated in a Hands-on Session on “Building On-Chain Apps on Ethereum Blockchain” conducted by the Department of Artificial Intelligence &amp; Data Science, Sri Krishna College of Technology, Coimbatore. The session gave practical exposure to blockchain fundamentals and on-chain application development on Ethereum.</p>
-              <div class="gallery-event-meta">
-                <span class="gallery-meta-item"><strong>Conducted by:</strong> Department of AI &amp; DS, SKCT</span>
-                <span class="gallery-meta-item"><strong>Date:</strong> 31 January 2026</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 4: Green Aviation & Smart Aerospace Technologies (Multi-Photo Album) -->
-          <div class="gallery-card gallery-card-carousel reveal-item" data-gallery-group="green-aviation">
-            <div class="gallery-image-box gallery-carousel-box">
-              <div class="gallery-slides">
-                <div class="gallery-slide active" data-src="assets/images/kriya26-green-aviation-psg.jpg" data-caption="Green Aviation &amp; Smart Aerospace Technologies ✈️ — Research Paper Presentation at KRIYA 2026, PSG College of Technology (14 March 2026)">
-                  <img src="assets/images/kriya26-green-aviation-psg.jpg" alt="Green Aviation &amp; Smart Aerospace Technologies Paper Presentation at KRIYA 2026, PSG College of Technology" class="gallery-img" style="object-position: center 35%;" loading="lazy">
-                </div>
-                <div class="gallery-slide" data-src="assets/images/kriya26-green-aviation-team.jpg" data-caption="Research Team Presentation Highlights — KRIYA 2026 at PSG College of Technology">
-                  <img src="assets/images/kriya26-green-aviation-team.jpg" alt="KRIYA 2026 Paper Presentation Team" class="gallery-img" style="object-position: center 35%;" loading="lazy">
-                </div>
-                <div class="gallery-slide" data-src="assets/images/cert-isro-bharatiya-antariksh-hackathon.jpg" data-caption="Bharatiya Antariksh Hackathon 2026 🚀 — Certificate of Participation &amp; Idea Submission presented by ISRO (Certificate ID: 2026H2S06BAH-P12887)">
-                  <img src="assets/images/cert-isro-bharatiya-antariksh-hackathon.jpg" alt="ISRO Bharatiya Antariksh Hackathon 2026 Certificate" class="gallery-img" style="object-position: center center;" loading="lazy">
-                </div>
-              </div>
-
-              <!-- In-Card Side Navigation Arrows -->
-              <button type="button" class="gallery-nav-arrow gallery-nav-prev" aria-label="Previous photo" title="Previous photo">
-                <span aria-hidden="true">&#x2039;</span>
-              </button>
-              <button type="button" class="gallery-nav-arrow gallery-nav-next" aria-label="Next photo" title="Next photo">
-                <span aria-hidden="true">&#x203A;</span>
-              </button>
-
-              <!-- Photo Counter & Album Badge -->
-              <div class="gallery-album-badge">
-                <span>✈️</span>
-                <span>3 PHOTOS</span>
-              </div>
-              <div class="gallery-counter-badge">
-                <span class="gallery-current-slide">1</span> / <span class="gallery-total-slides">3</span>
-              </div>
-
-              <button type="button" class="gallery-overlay-btn gallery-carousel-open-btn" aria-label="Enlarge image in theater mode">
-                <span class="gallery-zoom-circle">🔍</span>
-              </button>
-            </div>
-
-            <div class="gallery-caption-box">
-              <div class="gallery-category-tag">Paper Presentation &amp; Space Hackathon • PSG Tech &amp; ISRO</div>
-              <h4 class="gallery-item-title">Green Aviation &amp; Smart Aerospace Technologies ✈️</h4>
-              <p class="gallery-item-desc">Presented a research paper titled <em>“Green Aviation &amp; Smart Aerospace Technologies”</em> at KRIYA 2026, PSG College of Technology, and participated with idea submission in the <strong>Bharatiya Antariksh Hackathon 2026</strong> organized by <strong>ISRO</strong>.</p>
-              <div class="gallery-event-meta">
-                <span class="gallery-meta-item"><strong>Events:</strong> KRIYA 2026 &bull; Bharatiya Antariksh Hackathon</span>
-                <span class="gallery-meta-item"><strong>Presented by:</strong> PSG College of Technology &amp; ISRO</span>
-                <span class="gallery-meta-item"><strong>Date:</strong> March 2026</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 5: AI & Machine Learning Internship (Multi-Photo Album) -->
+          <!-- ITEM 2: AI & Machine Learning Internship (Multi-Photo Album) -->
           <div class="gallery-card gallery-card-carousel reveal-item" data-gallery-group="ai-ml-internship">
             <div class="gallery-image-box gallery-carousel-box">
               <div class="gallery-slides">
@@ -629,6 +647,203 @@
                 <span class="gallery-meta-item"><strong>Company:</strong> Skylena Info Technology Pvt. Ltd.</span>
                 <span class="gallery-meta-item"><strong>Duration:</strong> 30-Day Internship (May 2026)</span>
                 <span class="gallery-meta-item"><strong>Domain:</strong> AI &amp; Machine Learning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 3: VARNAM'26 National Level Tech Fest (Multi-Photo Album) -->
+          <div class="gallery-card gallery-card-carousel reveal-item" data-gallery-group="varnam-26">
+            <div class="gallery-image-box gallery-carousel-box">
+              <div class="gallery-slides">
+                <div class="gallery-slide active" data-src="assets/images/varnam26-team.jpg" data-caption="VARNAM’26 — National Level Tech Fest at Karpagam Institute of Technology">
+                  <img src="assets/images/varnam26-team.jpg" alt="VARNAM'26 Tech Fest Team at Karpagam Institute of Technology" class="gallery-img" style="object-position: center 25%;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/varnam26-mern-workshop.png" data-caption="VARNAM’26 — MERN Full Stack Development Hands-On Workshop Session">
+                  <img src="assets/images/varnam26-mern-workshop.png" alt="VARNAM'26 MERN Full Stack Development Workshop" class="gallery-img" style="object-position: center center;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/varnam26-team-gps.jpg" data-caption="VARNAM’26 — Team Participation Highlights &amp; Campus Expo (05/02/2026)">
+                  <img src="assets/images/varnam26-team-gps.jpg" alt="VARNAM'26 Participation Highlights" class="gallery-img" style="object-position: center 25%;" loading="lazy">
+                </div>
+              </div>
+
+              <!-- In-Card Side Navigation Arrows -->
+              <button type="button" class="gallery-nav-arrow gallery-nav-prev" aria-label="Previous photo" title="Previous photo">
+                <span aria-hidden="true">&#x2039;</span>
+              </button>
+              <button type="button" class="gallery-nav-arrow gallery-nav-next" aria-label="Next photo" title="Next photo">
+                <span aria-hidden="true">&#x203A;</span>
+              </button>
+
+              <!-- Photo Counter & Album Badge -->
+              <div class="gallery-album-badge">
+                <span>📸</span>
+                <span>3 PHOTOS</span>
+              </div>
+              <div class="gallery-counter-badge">
+                <span class="gallery-current-slide">1</span> / <span class="gallery-total-slides">3</span>
+              </div>
+
+              <button type="button" class="gallery-overlay-btn gallery-carousel-open-btn" aria-label="Enlarge image in theater mode">
+                <span class="gallery-zoom-circle">🔍</span>
+              </button>
+            </div>
+
+            <div class="gallery-caption-box">
+              <div class="gallery-category-tag">National Tech Fest • VARNAM’26</div>
+              <h4 class="gallery-item-title">VARNAM’26 – National Level Tech Fest</h4>
+              <p class="gallery-item-desc">Participated in VARNAM’26 – National Level Tech Fest at Karpagam Institute of Technology. Gained hands-on exposure and strengthened problem-solving and development skills.</p>
+              <div class="gallery-event-meta">
+                <span class="gallery-meta-item"><strong>Events:</strong> Mind Maze, Code Twins</span>
+                <span class="gallery-meta-item"><strong>Workshop:</strong> MERN Full Stack Development</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 4: Hands-on Session on Ethereum Blockchain (Multi-Photo Album) -->
+          <div class="gallery-card gallery-card-carousel reveal-item" data-gallery-group="ethereum-blockchain">
+            <div class="gallery-image-box gallery-carousel-box">
+              <div class="gallery-slides">
+                <div class="gallery-slide active" data-src="assets/images/ethereum-blockchain-session.jpg" data-caption="Building On-Chain Apps on Ethereum Blockchain — Hands-on Session by Dept. of AI &amp; DS at SKCT (31/01/2026)">
+                  <img src="assets/images/ethereum-blockchain-session.jpg" alt="Building On-Chain Apps on Ethereum Blockchain Session" class="gallery-img" style="object-position: center center;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/ethereum-blockchain-lab.jpg" data-caption="Ethereum Blockchain Development — Practical Lab &amp; On-Chain App Session at SKCT">
+                  <img src="assets/images/ethereum-blockchain-lab.jpg" alt="Ethereum Blockchain Practical Lab Session" class="gallery-img" style="object-position: center center;" loading="lazy">
+                </div>
+              </div>
+
+              <!-- In-Card Side Navigation Arrows -->
+              <button type="button" class="gallery-nav-arrow gallery-nav-prev" aria-label="Previous photo" title="Previous photo">
+                <span aria-hidden="true">&#x2039;</span>
+              </button>
+              <button type="button" class="gallery-nav-arrow gallery-nav-next" aria-label="Next photo" title="Next photo">
+                <span aria-hidden="true">&#x203A;</span>
+              </button>
+
+              <!-- Photo Counter & Album Badge -->
+              <div class="gallery-album-badge">
+                <span>📸</span>
+                <span>2 PHOTOS</span>
+              </div>
+              <div class="gallery-counter-badge">
+                <span class="gallery-current-slide">1</span> / <span class="gallery-total-slides">2</span>
+              </div>
+
+              <button type="button" class="gallery-overlay-btn gallery-carousel-open-btn" aria-label="Enlarge image in theater mode">
+                <span class="gallery-zoom-circle">🔍</span>
+              </button>
+            </div>
+
+            <div class="gallery-caption-box">
+              <div class="gallery-category-tag">Hands-On Session • Web3 &amp; Blockchain</div>
+              <h4 class="gallery-item-title">Building On-Chain Apps on Ethereum Blockchain</h4>
+              <p class="gallery-item-desc">Glad to have participated in a Hands-on Session on “Building On-Chain Apps on Ethereum Blockchain” conducted by the Department of Artificial Intelligence &amp; Data Science, Sri Krishna College of Technology, Coimbatore. The session gave practical exposure to blockchain fundamentals and on-chain application development on Ethereum.</p>
+              <div class="gallery-event-meta">
+                <span class="gallery-meta-item"><strong>Conducted by:</strong> Department of AI &amp; DS, SKCT</span>
+                <span class="gallery-meta-item"><strong>Date:</strong> 31 January 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 5: Green Aviation & Smart Aerospace Technologies (Multi-Photo Album) -->
+          <div class="gallery-card gallery-card-carousel reveal-item" data-gallery-group="green-aviation">
+            <div class="gallery-image-box gallery-carousel-box">
+              <div class="gallery-slides">
+                <div class="gallery-slide active" data-src="assets/images/kriya26-green-aviation-psg.jpg" data-caption="Green Aviation &amp; Smart Aerospace Technologies ✈️ — Research Paper Presentation at KRIYA 2026, PSG College of Technology (14 March 2026)">
+                  <img src="assets/images/kriya26-green-aviation-psg.jpg" alt="Green Aviation &amp; Smart Aerospace Technologies Paper Presentation at KRIYA 2026, PSG College of Technology" class="gallery-img" style="object-position: center 35%;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/kriya26-green-aviation-team.jpg" data-caption="Research Team Presentation Highlights — KRIYA 2026 at PSG College of Technology">
+                  <img src="assets/images/kriya26-green-aviation-team.jpg" alt="KRIYA 2026 Paper Presentation Team" class="gallery-img" style="object-position: center 35%;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/kriya26-event-participation-badges.jpg" data-caption="KRIYA 2026 — Official Event Participation Badges &amp; Delegate Passes at PSG College of Technology campus">
+                  <img src="assets/images/kriya26-event-participation-badges.jpg" alt="KRIYA 2026 Official Event Participation Badges at PSG College of Technology" class="gallery-img" style="object-position: center 30%;" loading="lazy">
+                </div>
+              </div>
+
+              <!-- In-Card Side Navigation Arrows -->
+              <button type="button" class="gallery-nav-arrow gallery-nav-prev" aria-label="Previous photo" title="Previous photo">
+                <span aria-hidden="true">&#x2039;</span>
+              </button>
+              <button type="button" class="gallery-nav-arrow gallery-nav-next" aria-label="Next photo" title="Next photo">
+                <span aria-hidden="true">&#x203A;</span>
+              </button>
+
+              <!-- Photo Counter & Album Badge -->
+              <div class="gallery-album-badge">
+                <span>✈️</span>
+                <span>3 PHOTOS</span>
+              </div>
+              <div class="gallery-counter-badge">
+                <span class="gallery-current-slide">1</span> / <span class="gallery-total-slides">3</span>
+              </div>
+
+              <button type="button" class="gallery-overlay-btn gallery-carousel-open-btn" aria-label="Enlarge image in theater mode">
+                <span class="gallery-zoom-circle">🔍</span>
+              </button>
+            </div>
+
+            <div class="gallery-caption-box">
+              <div class="gallery-category-tag">Paper Presentation • PSG Tech KRIYA 2026</div>
+              <h4 class="gallery-item-title">Green Aviation &amp; Smart Aerospace Technologies ✈️</h4>
+              <p class="gallery-item-desc">Presented a research paper titled <em>“Green Aviation &amp; Smart Aerospace Technologies”</em> at KRIYA 2026, PSG College of Technology. Focused on sustainable aviation strategies, aerodynamic innovations, and next-generation smart aerospace systems.</p>
+              <div class="gallery-event-meta">
+                <span class="gallery-meta-item"><strong>Event:</strong> KRIYA 2026 – Global Clash of Techno Talents</span>
+                <span class="gallery-meta-item"><strong>Presented at:</strong> PSG College of Technology</span>
+                <span class="gallery-meta-item"><strong>Date:</strong> 14 March 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 6: Future Builders Connect – Coimbatore (Multi-Photo Album) -->
+          <div class="gallery-card gallery-card-carousel reveal-item" data-gallery-group="future-builders-connect">
+            <div class="gallery-image-box gallery-carousel-box">
+              <div class="gallery-slides">
+                <div class="gallery-slide active" data-src="assets/images/aws-future-builders-girls-team.jpg" data-caption="Future Builders Connect, Coimbatore ☁️✨ — Learning, Building &amp; Connecting at the AWS Builder Center Neon Wall">
+                  <img src="assets/images/aws-future-builders-girls-team.jpg" alt="Future Builders Connect Coimbatore - Learn Build Connect" class="gallery-img" style="object-position: center 25%;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/aws-future-builders-team-passports.jpg" data-caption="Future Builders Connect 🚀 — Team Passports &amp; AWS Community Wristbands: Building Connections &amp; Creating Memories">
+                  <img src="assets/images/aws-future-builders-team-passports.jpg" alt="Future Builders Connect - Event Passports and Wristbands" class="gallery-img" style="object-position: center center;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/aws-future-builders-full-team.jpg" data-caption="Future Builders Connect, Coimbatore ☁️ — Full Student Builders &amp; Peers Cohort">
+                  <img src="assets/images/aws-future-builders-full-team.jpg" alt="Future Builders Connect - Student Cohort Team" class="gallery-img" style="object-position: center 25%;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/aws-future-builders-stage-quiz.jpg" data-caption="AWS Builder Center Live Stage 🚀 — Interactive AI &amp; Cloud Technical Quiz and Knowledge Challenge Sessions">
+                  <img src="assets/images/aws-future-builders-stage-quiz.jpg" alt="AWS Builder Center Live Stage and Technical Quiz Session" class="gallery-img" style="object-position: center 40%;" loading="lazy">
+                </div>
+                <div class="gallery-slide" data-src="assets/images/aws-future-builders-swag-kit.jpg" data-caption="AWS Builder Center Official Swag Kit 🎒 — Future Builders Connect Merchandise, Tech Gear &amp; Commemorative Kit">
+                  <img src="assets/images/aws-future-builders-swag-kit.jpg" alt="AWS Builder Center Swag Kit and Gear" class="gallery-img" style="object-position: center center;" loading="lazy">
+                </div>
+              </div>
+
+              <!-- In-Card Side Navigation Arrows -->
+              <button type="button" class="gallery-nav-arrow gallery-nav-prev" aria-label="Previous photo" title="Previous photo">
+                <span aria-hidden="true">&#x2039;</span>
+              </button>
+              <button type="button" class="gallery-nav-arrow gallery-nav-next" aria-label="Next photo" title="Next photo">
+                <span aria-hidden="true">&#x203A;</span>
+              </button>
+
+              <!-- Photo Counter & Album Badge -->
+              <div class="gallery-album-badge">
+                <span>☁️</span>
+                <span>5 PHOTOS</span>
+              </div>
+              <div class="gallery-counter-badge">
+                <span class="gallery-current-slide">1</span> / <span class="gallery-total-slides">5</span>
+              </div>
+
+              <button type="button" class="gallery-overlay-btn gallery-carousel-open-btn" aria-label="Enlarge image in theater mode">
+                <span class="gallery-zoom-circle">🔍</span>
+              </button>
+            </div>
+
+            <div class="gallery-caption-box">
+              <div class="gallery-category-tag">AWS Community • Future Builders Connect</div>
+              <h4 class="gallery-item-title">Future Builders Connect – Coimbatore ☁️🚀</h4>
+              <p class="gallery-item-desc">Attending Future Builders Connect in Coimbatore was a wonderful experience! 💙✨ Building connections, creating memories, and growing together with fellow cloud enthusiasts and builders through engaging tech sessions and interactive challenges.</p>
+              <div class="gallery-event-meta">
+                <span class="gallery-meta-item"><strong>Location:</strong> Coimbatore</span>
+                <span class="gallery-meta-item"><strong>Event:</strong> AWS Builder Center – Future Builders Connect</span>
+                <span class="gallery-meta-item"><strong>Theme:</strong> Learn &bull; Build &bull; Connect</span>
               </div>
             </div>
           </div>
@@ -731,7 +946,7 @@
           <span class="section-tag">CREDENTIALS</span>
           <h2 class="section-title">CERTIFICATIONS</h2>
           <p class="section-subtitle">
-            National online certifications, NPTEL-IIT credentials, cloud tracks, symposium presentations, and industry internships.
+            National online certifications, NPTEL-IIT credentials, cloud tracks, verified skill badges, symposium presentations, and industry internships.
           </p>
         </div>
 
@@ -1430,6 +1645,108 @@
             </div>
           </div>
 
+        </div>
+
+        <!-- SECTION 7: Digital Skill Badges (AWS Educate, AWS SBG & Cisco Academy) -->
+        <div class="badges-showcase-wrapper reveal-item" id="badges-showcase">
+          <div class="cert-column-section badges-column-full">
+            <div class="cert-col-header badges-col-header">
+              <div class="badges-header-left">
+                <span class="nptel-badge-tag">AWS EDUCATE &bull; AWS STUDENT BUILDER GROUP &bull; CISCO ACADEMY</span>
+                <h3 class="cert-col-title">Digital Skill Badges</h3>
+                <p class="cert-col-subtitle">5 Official Verified Cloud, Leadership &amp; Networking Badges</p>
+              </div>
+              <div class="badges-header-badge">
+                <span aria-hidden="true">&#x1F6E1;&#xFE0F;</span>
+                <span>5 VERIFIED BADGES</span>
+              </div>
+            </div>
+
+            <!-- Badges Interactive Grid -->
+            <div class="digital-badges-grid">
+              
+              <!-- 1. AWS Educate: Getting Started with Storage -->
+              <div class="digital-badge-card" tabindex="0" role="button" aria-label="View AWS Educate Getting Started with Storage Badge in fullscreen" data-badge-index="0" data-src="assets/images/badge-aws-educate-storage.png" data-caption="AWS Educate — Getting Started with Storage (Trained Badge) &bull; Awarded by Amazon Web Services">
+                <div class="badge-icon-box">
+                  <img src="assets/images/badge-aws-educate-storage.png" alt="AWS Educate - Getting Started with Storage Badge" class="badge-img" loading="lazy">
+                  <span class="badge-zoom-hint" aria-hidden="true">&#x1F50D;</span>
+                </div>
+                <div class="badge-meta-box">
+                  <span class="badge-brand-tag aws-tag">AWS EDUCATE</span>
+                  <h4 class="badge-title">Getting Started with Storage</h4>
+                  <p class="badge-issuer">Amazon Web Services &bull; Cloud Storage</p>
+                  <div class="badge-footer-tag">
+                    <span class="nptel-score-tag elite-tag">Trained</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. AWS Student Builder Group: Leader -->
+              <div class="digital-badge-card" tabindex="0" role="button" aria-label="View AWS Student Builder Group Leader Badge in fullscreen" data-badge-index="1" data-src="assets/images/badge-aws-sbg-leader.png" data-caption="AWS Student Builder Group — Leader Badge &bull; Official SKCT Community Leadership Recognition">
+                <div class="badge-icon-box">
+                  <img src="assets/images/badge-aws-sbg-leader.png" alt="AWS Student Builder Group - Leader Badge" class="badge-img" loading="lazy">
+                  <span class="badge-zoom-hint" aria-hidden="true">&#x1F50D;</span>
+                </div>
+                <div class="badge-meta-box">
+                  <span class="badge-brand-tag sbg-tag">AWS SBG</span>
+                  <h4 class="badge-title">Student Builder Group Leader</h4>
+                  <p class="badge-issuer">AWS Community &bull; Leadership Recognition</p>
+                  <div class="badge-footer-tag">
+                    <span class="nptel-score-tag elite-tag">Leader</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. AWS Student Builder Group: Ignite -->
+              <div class="digital-badge-card" tabindex="0" role="button" aria-label="View AWS Student Builder Group Ignite Badge in fullscreen" data-badge-index="2" data-src="assets/images/badge-aws-sbg-ignite.png" data-caption="AWS Student Builder Group — Ignite Badge &bull; Student Cloud Builder Milestone">
+                <div class="badge-icon-box">
+                  <img src="assets/images/badge-aws-sbg-ignite.png" alt="AWS Student Builder Group - Ignite Badge" class="badge-img" loading="lazy">
+                  <span class="badge-zoom-hint" aria-hidden="true">&#x1F50D;</span>
+                </div>
+                <div class="badge-meta-box">
+                  <span class="badge-brand-tag sbg-tag">AWS SBG</span>
+                  <h4 class="badge-title">Student Builder Group Ignite</h4>
+                  <p class="badge-issuer">AWS Community &bull; Milestone Badge</p>
+                  <div class="badge-footer-tag">
+                    <span class="nptel-score-tag elite-tag">Ignite</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 4. AWS Student Builder Group: Spark -->
+              <div class="digital-badge-card" tabindex="0" role="button" aria-label="View AWS Student Builder Group Spark Badge in fullscreen" data-badge-index="3" data-src="assets/images/badge-aws-sbg-spark.png" data-caption="AWS Student Builder Group — Spark Badge &bull; Community Engagement &amp; Cloud Fundamentals">
+                <div class="badge-icon-box">
+                  <img src="assets/images/badge-aws-sbg-spark.png" alt="AWS Student Builder Group - Spark Badge" class="badge-img" loading="lazy">
+                  <span class="badge-zoom-hint" aria-hidden="true">&#x1F50D;</span>
+                </div>
+                <div class="badge-meta-box">
+                  <span class="badge-brand-tag sbg-tag">AWS SBG</span>
+                  <h4 class="badge-title">Student Builder Group Spark</h4>
+                  <p class="badge-issuer">AWS Community &bull; Builder Spark</p>
+                  <div class="badge-footer-tag">
+                    <span class="nptel-score-tag elite-tag">Spark</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. Cisco Networking Academy: Networking Basics -->
+              <div class="digital-badge-card" tabindex="0" role="button" aria-label="View Cisco Networking Academy Networking Basics Badge in fullscreen" data-badge-index="4" data-src="assets/images/badge-cisco-networking-basics.png" data-caption="Cisco Networking Academy — Networking Basics (Verified Badge) &bull; Cisco Academy">
+                <div class="badge-icon-box">
+                  <img src="assets/images/badge-cisco-networking-basics.png" alt="Cisco Networking Academy - Networking Basics Verified Badge" class="badge-img" loading="lazy">
+                  <span class="badge-zoom-hint" aria-hidden="true">&#x1F50D;</span>
+                </div>
+                <div class="badge-meta-box">
+                  <span class="badge-brand-tag cisco-tag">CISCO ACADEMY</span>
+                  <h4 class="badge-title">Networking Basics</h4>
+                  <p class="badge-issuer">Cisco Networking Academy &bull; Verified</p>
+                  <div class="badge-footer-tag">
+                    <span class="nptel-score-tag elite-tag">Verified</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
       </div>
