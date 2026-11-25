@@ -845,6 +845,14 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreText: 'UTokyo Certified',
         isElite: true,
         src: 'assets/images/coursera-cert-utokyo-game-theory.jpg'
+      },
+      {
+        tag: 'IAMNEO • NIIT VENTURE',
+        title: 'Frontend Frameworks',
+        desc: 'Completed on January 30, 2026. Certified in Frontend Frameworks demonstrating comprehensive understanding and expertise during III semester of B.Tech Information Technology at Sri Krishna College of Technology. Authorized by iamneo (An NIIT Venture).',
+        scoreText: 'Cleared',
+        isElite: true,
+        src: 'assets/images/coursera-cert-iamneo-frontend-frameworks.jpg'
       }
     ];
 
@@ -896,7 +904,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const albumCourseraData = courseraData.map((d) => ({
       src: d.src,
-      caption: `${d.title} — ${d.tag} (Coursera Verified)`
+      caption: `${d.title} — ${d.tag} (Verified Credential)`
     }));
 
     const openCourseraTheater = () => {

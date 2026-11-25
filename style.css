@@ -768,10 +768,11 @@ body.preloader-active {
   font-size: 0.92rem;
   font-weight: 500;
   color: #cbd5e1;
-  padding: 7px 18px;
+  padding: 7px 16px;
   border-radius: var(--radius-full);
   border: 1.5px solid transparent;
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
 .nav-link:hover {
@@ -785,6 +786,20 @@ body.preloader-active {
   background: rgba(0, 200, 255, 0.08);
   box-shadow: 0 0 16px rgba(0, 200, 255, 0.35);
   font-weight: 600;
+}
+
+@media (max-width: 1250px) and (min-width: 869px) {
+  .nav-brand {
+    margin-right: clamp(16px, 2.5vw, 36px);
+    font-size: 1.2rem;
+  }
+  .nav-list {
+    gap: 6px;
+  }
+  .nav-link {
+    padding: 6px 12px;
+    font-size: 0.86rem;
+  }
 }
 
 .hamburger-btn {
@@ -939,9 +954,9 @@ body.preloader-active {
 
 .hero-two-col {
   display: grid;
-  grid-template-columns: 1.18fr 0.82fr;
+  grid-template-columns: 1.12fr 0.88fr;
   align-items: center;
-  gap: 48px;
+  gap: 44px;
 }
 
 /* Left Content Column */
@@ -952,11 +967,9 @@ body.preloader-active {
   z-index: 2;
 }
 
-/* Greeting (Hi, I'm Nandhini 👋) */
+/* Greeting (Hi, I'm) */
 .hero-greeting {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
   font-family: var(--font-heading);
   font-size: clamp(1.15rem, 2.2vw, 1.45rem);
   font-weight: 700;
@@ -1165,45 +1178,85 @@ body.preloader-active {
 
 .hero-portrait-stage {
   position: relative;
-  width: 430px;
-  height: 430px;
+  width: 470px;
+  height: 470px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Soft Ambient Radial Glow Behind Frame */
+/* Subtle Pulsing Ambient Radial Glow Behind Frame */
 .hero-portrait-glow {
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: 410px;
+  height: 410px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 200, 255, 0.18) 0%, rgba(168, 85, 247, 0.1) 45%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 200, 255, 0.22) 0%, rgba(56, 189, 248, 0.14) 38%, rgba(168, 85, 247, 0.1) 62%, transparent 75%);
   filter: blur(35px);
   pointer-events: none;
+  animation: heroGlowPulse 4s ease-in-out infinite alternate;
 }
 
-/* Decorative Ring 1: Larger circular ring behind photo */
+@keyframes heroGlowPulse {
+  0% {
+    transform: scale(0.94);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 0.95;
+  }
+}
+
+/* Orbital Ring 1: Outer glowing orbital ring with slow clockwise rotation */
 .hero-frame-ring-outer {
   position: absolute;
-  width: 380px;
-  height: 380px;
+  width: 435px;
+  height: 435px;
   border-radius: 50%;
-  border: 1.5px dashed rgba(0, 200, 255, 0.32);
+  border: 1.5px dashed rgba(0, 200, 255, 0.38);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.12);
   pointer-events: none;
-  animation: heroRingSpinSlow 60s linear infinite;
+  animation: heroRingSpinSlow 36s linear infinite;
 }
 
-/* Decorative Ring 2: Second thin circular outline with subtle counter-rotation */
+/* Small Glowing Particle Moving Along Outer Orbital Ring */
+.hero-orbit-particle {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00c8ff;
+  box-shadow: 0 0 10px #00c8ff, 0 0 20px #00c8ff, 0 0 30px #38bdf8;
+  animation: heroParticlePulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes heroParticlePulse {
+  0% {
+    transform: translateX(-50%) scale(0.9);
+    box-shadow: 0 0 8px #00c8ff, 0 0 16px #00c8ff;
+  }
+  100% {
+    transform: translateX(-50%) scale(1.25);
+    box-shadow: 0 0 14px #00c8ff, 0 0 26px #38bdf8, 0 0 36px #a855f7;
+  }
+}
+
+/* Orbital Ring 2: Second inner orbital ring with slow counter-clockwise rotation */
 .hero-frame-ring-inner {
   position: absolute;
-  width: 330px;
-  height: 330px;
+  width: 375px;
+  height: 375px;
   border-radius: 50%;
-  border: 1px solid rgba(168, 85, 247, 0.28);
+  border: 1.5px solid rgba(168, 85, 247, 0.28);
   border-top-color: var(--cyan);
+  border-bottom-color: #38bdf8;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.14);
   pointer-events: none;
-  animation: heroRingSpinReverse 45s linear infinite;
+  animation: heroRingSpinReverse 28s linear infinite;
 }
 
 @keyframes heroRingSpinSlow {
@@ -1216,16 +1269,16 @@ body.preloader-active {
   to { transform: rotate(0deg); }
 }
 
-/* Central Circular Photo Frame with Floating Animation */
+/* Central Circular Photo Frame with Thin Glowing Cyan Border & Floating Animation */
 .hero-photo-circle {
-  width: 275px;
-  height: 275px;
+  width: 315px;
+  height: 315px;
   border-radius: 50%;
   position: relative;
   z-index: 3;
   overflow: hidden;
-  border: 3px solid var(--cyan);
-  box-shadow: 0 0 35px rgba(0, 200, 255, 0.45), 0 0 70px rgba(0, 200, 255, 0.15);
+  border: 2.5px solid var(--cyan);
+  box-shadow: 0 0 28px rgba(0, 200, 255, 0.45), 0 0 55px rgba(0, 200, 255, 0.2), inset 0 0 15px rgba(0, 200, 255, 0.2);
   background: #080d1a;
   animation: heroPhotoFloat 6s ease-in-out infinite alternate;
 }
@@ -1244,6 +1297,8 @@ body.preloader-active {
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
+  border-radius: 50%;
+  display: block;
   transition: transform var(--transition-normal);
 }
 
@@ -1406,6 +1461,11 @@ body.preloader-active {
 }
 
 /* --- 8. Gallery Section (Responsive Grid & Lightbox) --- */
+.gallery-section .section-title {
+  white-space: nowrap;
+  font-size: clamp(1.4rem, 4.2vw, 2.5rem);
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -3461,29 +3521,35 @@ body.preloader-active {
   }
 
   .hero-portrait-stage {
-    width: 320px;
-    height: 320px;
+    width: 330px;
+    height: 330px;
     margin: 15px auto;
   }
 
   .hero-portrait-glow {
-    width: 280px;
-    height: 280px;
-  }
-
-  .hero-frame-ring-outer {
     width: 290px;
     height: 290px;
   }
 
+  .hero-frame-ring-outer {
+    width: 310px;
+    height: 310px;
+  }
+
+  .hero-orbit-particle {
+    width: 8px;
+    height: 8px;
+    top: -4px;
+  }
+
   .hero-frame-ring-inner {
-    width: 265px;
-    height: 265px;
+    width: 270px;
+    height: 270px;
   }
 
   .hero-photo-circle {
-    width: 200px;
-    height: 200px;
+    width: 225px;
+    height: 225px;
   }
 
   .hero-cta-group {
@@ -4082,22 +4148,28 @@ body[data-theme="light"] {
 }
 
 [data-theme="light"] .hero-portrait-glow {
-  background: radial-gradient(circle, rgba(2, 132, 199, 0.14) 0%, rgba(99, 102, 241, 0.06) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.16) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 70%);
   filter: blur(25px);
 }
 
 [data-theme="light"] .hero-frame-ring-outer {
-  border-color: rgba(2, 132, 199, 0.3);
+  border-color: rgba(2, 132, 199, 0.35);
+}
+
+[data-theme="light"] .hero-orbit-particle {
+  background: #0284c7;
+  box-shadow: 0 0 10px #0284c7, 0 0 18px rgba(2, 132, 199, 0.5);
 }
 
 [data-theme="light"] .hero-frame-ring-inner {
   border-color: rgba(99, 102, 241, 0.25);
   border-top-color: #0284c7;
+  border-bottom-color: #0369a1;
 }
 
 [data-theme="light"] .hero-photo-circle {
   border-color: #0284c7;
-  box-shadow: 0 12px 35px rgba(2, 132, 199, 0.25);
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.25);
   background: #ffffff;
 }
 
